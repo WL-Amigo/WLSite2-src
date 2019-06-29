@@ -19,7 +19,8 @@ module.exports = {
           externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
         }
       }
-    }
+    },
+    { use: 'gridsome-plugin-netlify-cms' }
   ],
   transformers: {
     remark: {}
