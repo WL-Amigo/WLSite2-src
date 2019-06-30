@@ -1,5 +1,6 @@
 ---
-title: サークルサイトをリニューアルしました
+title: site-has-been-renewal
+displayTitle: サークルサイトをリニューアルしました
 date: 2019-06-29T00:00:00.000Z
 ---
 サイトを [GridSome](https://gridsome.org/) と [Netlify CMS](https://www.netlifycms.org/) 、そして [Netlify](https://www.netlify.com/) を構成要素として launch し直しました。

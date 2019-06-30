@@ -13,7 +13,7 @@ module.exports = {
       options: {
         path: 'articles/**/*.md',
         typeName: 'Article',
-        route: 'articles/:year/:month/:day/:slug',
+        route: 'articles/:year/:month/:day/:title',
         remark: {
           externalLinksTarget: '_blank',
           externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
