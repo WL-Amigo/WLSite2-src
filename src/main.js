@@ -4,10 +4,13 @@
 import DefaultLayout from '~/layouts/Default.vue'
 import '@/assets/global.scss'
 import Buefy from 'buefy'
+import { setupFontAwesome } from './setup/FontAwesome';
 import { SafeExternalLinkComponent } from './components/common/SafeExternalLink';
 
 export default function (Vue, { router, head, isClient }) {
   Vue.use(Buefy);
+
+  setupFontAwesome(Vue);
 
   Vue.component('ex-link', SafeExternalLinkComponent);
 
