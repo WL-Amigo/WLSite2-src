@@ -17,6 +17,17 @@ module.exports = function (api) {
     // ビルド時の年をメタデータに挿入
     const BuildDate = new Date(Date.now());
     addMetadata('buildYear', BuildDate.getFullYear());
+
+    // ライセンス情報のコレクションを作成
+    const LicenseInfoCollection = addCollection('LicenseInfo');
+    const LicenseDataAuto = JSON.parse(await FS.readFile('./data/licenses.auto.json', 'utf-8'));
+    for(let license of LicenseDataAuto) {
+      LicenseInfoCollection.addNode({
+        package: license.package,
+        license: license.license,
+        url: license.url,
+      });
+    }
   })
 
   api.createPages(({ createPage }) => {

@@ -25,6 +25,8 @@ div
         ex-link(href="https://gridsome.org/") Gridsome
         | , 
         ex-link(href="https://www.netlify.com/") Netlify
+      p 
+        g-link(to="/licenses") Licenses for libraries used in this sites
 </template>
 
 <static-query>
