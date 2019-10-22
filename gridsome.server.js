@@ -4,10 +4,19 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
+const FS = require('fs').promises;
+const YAML = require('js-yaml');
 
 module.exports = function (api) {
-  api.loadSource(({ addContentType }) => {
-    // Use the Data Store API here: https://gridsome.org/docs/data-store-api
+  api.loadSource(async ({ addCollection, addMetadata }) => {
+    const Metadata = YAML.safeLoad(await FS.readFile('./data/metadata.yaml', 'utf-8'));
+    for(let key of Object.keys(Metadata)){
+      addMetadata(key, Metadata[key]);
+    }
+
+    // ビルド時の年をメタデータに挿入
+    const BuildDate = new Date(Date.now());
+    addMetadata('buildYear', BuildDate.getFullYear());
   })
 
   api.createPages(({ createPage }) => {

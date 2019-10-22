@@ -16,7 +16,7 @@ div
   slot
   footer.footer
     .content.has-text-centered
-      p c 2019 アミーゴ(Amigo)
+      p &copy; 2019-{{ $static.metadata.buildYear }} アミーゴ(Amigo)
 </template>
 
 <static-query>
