@@ -23,7 +23,7 @@
     "js-yaml": "^3.13.1",
     "jstransformer-remark": "^7.0.0",
     "netlify-cms": "^2.9.5",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "pug": "^2.0.3",
     "sass-loader": "^8.0.0",
     "typescript": "^3.4.5"
