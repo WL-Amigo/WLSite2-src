@@ -77,7 +77,7 @@ query($id: ID!) {
       url
       label
     }
-    screenshots (width: 640, height: 480, quality: 85)
+    screenshots (width: 640, height: 480, quality: 85, fit: contain, background: "#FFF")
   }
 }
 </page-query>

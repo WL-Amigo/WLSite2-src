@@ -17,7 +17,7 @@ query {
         state
         category
         technologies
-        banner
+        banner (width: 800, height: 400, quality: 85)
       }
     }
   }
