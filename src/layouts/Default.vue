@@ -8,9 +8,11 @@
         </span>
       </g-link>
       <nav-menu-mobile class="lg:hidden" />
-      <nav-menu-desktop class="hidden sm:flex md:flex" />
+      <nav-menu-desktop class="hidden lg:flex" />
     </nav>
-    <slot />
+    <div class="px-2">
+      <slot />
+    </div>
     <div class="text-center py-8 text-gray-600">
       <p>&copy; 2020 Amigo (WhiteLuckBringers)</p>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-2">
+  <div class="container mx-auto">
     <personal-info />
     <tech-info />
     <career-info class="mt-4" />
