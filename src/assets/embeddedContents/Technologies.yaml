@@ -1,0 +1,66 @@
+Vue.js 2.x:
+  type: web-frontend 
+  url: https://jp.vuejs.org/index.html
+Gridsome: 
+  type: web-frontend
+  url: https://gridsome.org/
+TypeScript: 
+  url: https://www.typescriptlang.org/
+  type: language
+Bulma CSS Framework: 
+  url: https://bulma.io/
+  type: web-frontend
+Buefy: 
+  url: https://buefy.org/
+  type: web-frontend
+Google Cloud Storage: 
+  url: https://cloud.google.com/storage
+  type: cloud-service
+Google Cloud CDN: 
+  url: https://cloud.google.com/cdn
+  type: cloud-service
+Golang: 
+  url: https://golang.org/
+  type: language
+Echo(Golang): 
+  url: https://echo.labstack.com/
+  type: backend
+Sharp(Node.js): 
+  url: https://sharp.pixelplumbing.com/
+  type: backend
+Vue.js Composition API:
+  type: web-frontend
+  url: https://composition-api.vuejs.org/
+Tailwind CSS:
+  url: https://tailwindcss.com/
+  type: web-frontend
+Ant Design Vue:
+  url: https://1x.antdv.com/docs/vue/introduce/
+  type: web-frontend
+Firebase Authentication:
+  url: https://firebase.google.com/products/auth
+  type: cloud-service
+Cloud Firestore:
+  url: https://firebase.google.com/products/firestore
+  type: cloud-service
+Cloud Storage for Firebase:
+  url: https://firebase.google.com/products/storage
+  type: cloud-service
+Firebase Hosting:
+  url: https://firebase.google.com/products/hosting
+  type: cloud-service
+Firebase Admin SDK (Golang):
+  url: https://firebase.google.com/docs/admin/setup
+  type: backend
+Cloud Functions for Firebase:
+  url: https://firebase.google.com/products/functions
+  type: cloud-service
+JSON Schema:
+  url: https://json-schema.org/
+  type: general
+quicktype:
+  url: https://quicktype.io/
+  type: general
+ts-morph:
+  url: https://ts-morph.com/
+  type: general

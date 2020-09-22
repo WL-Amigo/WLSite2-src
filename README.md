@@ -1,14 +1,36 @@
-# Default starter for Gridsome
+# WhiteLuckBringers Circle/Portfolio Site
 
-This is the project you get when you run `gridsome create new-project`.
+(In this time, there is Japanese site only...)
+
+## License
+
+All files (but except files shown below) under this repository are licensed under MIT License.
+
+But these files are UNLICENSED (since these files are contents for my site, and I don't suppose to be reused by other people).
+
+* `contents/**/*`
+* `src/assets/embeddedContents/**/*`
+* `src/assets/images/**/*`
+
+You cannot use these files without permission. If you need to use, please ask me for permissions.
+
+## Build
 
 ### 1. Install Gridsome CLI tool if you don't have
 
-`npm install --global @gridsome/cli`
+`yarn global add @gridsome/cli`
 
-### 2. Create a Gridsome project
+### 2. Start dev server
 
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+```sh
+# first time only
+$ yarn
+
+$ yarn serve
+```
+
+### 3. Build whole site
+
+```sh
+$ yarn build
+```

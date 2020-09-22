@@ -1,49 +1,34 @@
-<template lang="pug">
-div
-  nav.navbar
-    .container
-      .navbar-brand
-        a.navbar-item(href="/") WhiteLuckers
-      .navbar-menu
-        .navbar-start
-          .navbar-item.has-dropdown.is-hoverable
-            a.navbar-link あばうと
-            .navbar-dropdown
-              a.navbar-item(href="/about/circle") WhiteLuckersについて
-              a.navbar-item(href="/about/self") アミーゴの自己紹介
-        
-        .navbar-end
-  slot
-  footer.footer
-    .content.has-text-centered
-      p &copy; 2019-{{ $static.metadata.buildYear }} アミーゴ(Amigo)
-      p
-        ex-link.sns-link(href="https://twitter.com/WL_Amigo"): fa-icon(:icon="['fab', 'twitter']" size="3x")
-        ex-link.sns-link(href="https://github.com/WL-Amigo"): fa-icon(:icon="['fab', 'github']" size="3x")
-        ex-link.sns-link(href="https://soundcloud.com/amigo-whiteluckers"): fa-icon(:icon="['fab', 'soundcloud']" size="3x")
-      p powered by 
-        ex-link(href="https://gridsome.org/") Gridsome
-        | , 
-        ex-link(href="https://www.netlify.com/") Netlify
-      p 
-        g-link(to="/licenses") Licenses for libraries used in this sites
+<template>
+  <div>
+    <nav class="flex items-center justify-between flex-wrap bg-white p-4">
+      <g-link to="/" class="flex items-center flex-shrink-0">
+        <img src="@/assets/images/logo.svg" alt="logo" class="h-8 w-8 mr-2" />
+        <span class="font-semibold text-xl tracking-tight">
+          WhiteLuckBringers
+        </span>
+      </g-link>
+      <nav-menu-mobile class="lg:hidden" />
+      <nav-menu-desktop class="hidden sm:flex md:flex" />
+    </nav>
+    <slot />
+    <div class="text-center py-8 text-gray-600">
+      <p>&copy; 2020 Amigo (WhiteLuckBringers)</p>
+    </div>
+  </div>
 </template>
 
-<static-query>
-query {
-  metadata {
-    siteName
-    buildYear
-  }
-}
-</static-query>
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api';
+import NavMenuMobile from '@/components/partials/DefaultLayout/NavMenuMobile.vue';
+import NavMenuDesktop from '@/components/partials/DefaultLayout/NavMenuDesktop.vue';
 
-<style lang="scss" scoped>
-.sns-link {
-  padding: 0 2rem;
-  color: #DDD;
-  &:hover {
-    color: #555;
-  }
-}
-</style>
+export default defineComponent({
+  setup() {
+    return {};
+  },
+  components: {
+    'nav-menu-mobile': NavMenuMobile,
+    'nav-menu-desktop': NavMenuDesktop,
+  },
+});
+</script>

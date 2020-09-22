@@ -1,31 +1,39 @@
 {
-  "name": "whiteluckers-site",
+  "name": "whiteluckbringers-site-2",
   "private": true,
   "scripts": {
-    "build": "gridsome build",
-    "develop": "gridsome develop",
+    "build:server": "$(yarn bin esbuild) --bundle ./server/gridsome.server.ts --outfile=./server/dist/index.js --minify --platform=node",
+    "build": "yarn build:server && gridsome build",
+    "serve": "yarn build:server && gridsome develop",
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.25",
-    "@fortawesome/free-brands-svg-icons": "^5.11.2",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@fortawesome/vue-fontawesome": "^0.1.7",
-    "buefy": "^0.8.5",
-    "gridsome": "^0.7.8",
-    "magic.css": "^1.4.1"
+    "@vue/composition-api": "^1.0.0-beta.14",
+    "gridsome": "^0.7.21",
+    "tailwindcss": "^1.8.10",
+    "vue-i18n": "^8.21.1",
+    "vue-i18n-composable": "^0.1.0",
+    "vue-meta": "^2.4.0"
   },
   "devDependencies": {
     "@gridsome/source-filesystem": "^0.6.2",
-    "@gridsome/transformer-remark": "^0.3.2",
-    "gridsome-plugin-netlify-cms": "^1.0.7",
-    "gridsome-plugin-pug": "^0.0.3",
-    "js-yaml": "^3.13.1",
-    "jstransformer-remark": "^7.0.0",
-    "netlify-cms": "^2.9.5",
-    "node-sass": "^4.12.0",
-    "pug": "^2.0.3",
-    "sass-loader": "^8.0.0",
-    "typescript": "^3.4.5"
+    "@gridsome/transformer-remark": "^0.6.2",
+    "@types/fs-extra": "^9.0.1",
+    "@types/js-yaml": "^3.12.5",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "esbuild": "^0.7.2",
+    "eslint": "^7.9.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-vue": "^6.2.2",
+    "fs-extra": "^9.0.1",
+    "gridsome-plugin-typescript": "^0.4.0",
+    "js-yaml": "^3.14.0",
+    "prettier": "^2.1.2",
+    "ts-loader": "^8.0.4",
+    "typescript": "^4.0.3",
+    "vue-router": "^3.4.3"
   }
 }

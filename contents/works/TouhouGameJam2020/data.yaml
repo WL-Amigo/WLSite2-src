@@ -1,0 +1,36 @@
+id: touhougamejam2020
+title: 東方ゲームジャム 2020
+publishDate: 2020-08
+category: website
+technologies:
+  - Vue.js 2.x
+  - Vue.js Composition API
+  - Gridsome
+  - TypeScript
+  - Bulma CSS Framework
+  - Buefy
+  - Ant Design Vue
+  - Firebase Authentication
+  - Cloud Firestore
+  - Cloud Storage for Firebase
+  - Firebase Hosting
+  - Golang
+  - Firebase Admin SDK (Golang)
+  - Sharp(Node.js)
+description: |
+  2020年8月に行われた、74時間で1本以上の東方Project二次創作ゲームを完成させ投稿するイベント「東方ゲームジャム 2020」の作品投稿システム、及びウェブサイト構成を担当させて頂きました。(サイトはすでに閉場しています)
+
+  基本的には既に発表している「博麗電脳試遊会EXTRA」の作品登録システム、及びウェブサイトをカスタマイズして公開しています。
+  ただ、その前にまとまった休みがあったため、作品登録システムは Vue.js Composition API と Ant Design Vue を用いて6日で完全なリライトを行いました。
+  また、応募を世界中から受け付けるため、作品投稿システム・ウェブサイトの両方を日本語・英語で切り替えられるようにしました。この際、Composition API を用いた簡易な i18n 機能を自作しました(ウェブサイト側は Composition API を入れられなかったので Mixin で実現しました)。
+
+  結果として 91 作品(但しプラットフォーム毎の分割登録を含む)が集まりました。短い期間ではありましたが、作品登録フォーム・作品公開サイトは特に問題なく機能しました。
+earnedExperiences: 
+  - Vue.js Composition API を用いたフォームアプリ開発
+  - 2言語対応サイトの制作(日本語・英語)
+links:
+  - label: "東方我楽多叢誌: 「東方ゲームジャム」 スタート！！ 作品エントリーフォームオープン＆テーマ発表！"
+    url: https://touhougarakuta.com/news/tohogamejam_theme
+  - label: "東方我楽多叢誌: 「東方ゲームジャム」投稿タイトルは全部で91本。全てのゲームが遊べる会場サイトがオープン！＆27時間放送で紹介した16本のタイトルをご紹介！"
+    url: https://touhougarakuta.com/news/gamejam_open
+
