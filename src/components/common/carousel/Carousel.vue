@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, ref } from '@vue/composition-api';
+import { defineComponent, PropType, ref, watch } from '@vue/composition-api';
 
 export default defineComponent({
   props: {
@@ -25,10 +25,17 @@ export default defineComponent({
       required: true,
     },
   },
-  setup() {
+  setup(props) {
     const page = ref(0);
     const getIndicatorClasses = (idx: number, currentPage: number) =>
       idx === currentPage ? ['bg-gray-600'] : ['bg-gray-300'];
+
+    // props.images を監視して、変更があったらインデックスを0に戻すようにする
+    watch(
+      () => props.images,
+      () => (page.value = 0),
+      { flush: 'pre' }
+    );
 
     return {
       page,
