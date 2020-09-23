@@ -1,9 +1,9 @@
 <template>
   <external-link
     :href="href"
-    class="rounded bg-blue-200 hover:bg-blue-300 px-2 mr-1 mb-1 flex flex-row items-center text-blue-900"
+    class="rounded bg-blue-200 hover:bg-blue-300 pl-1 pr-2 mr-1 mb-1 flex flex-row items-center text-blue-900"
   >
-    <export-icon v-if="href.length > 0" />
+    <export-icon v-if="href.length > 0" class="w-4 h-4 mr-1" />
     <span class="inline">{{ label }}</span>
   </external-link>
 </template>
@@ -18,17 +18,17 @@ export default defineComponent({
   props: {
     label: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   setup(props) {
     return {
-      href: TechnologiesDict[props.label]?.url ?? ''
+      href: TechnologiesDict[props.label]?.url ?? '',
     };
   },
   components: {
     'export-icon': ExportIcon,
-    'external-link': ExternalLinkComponent
-  }
+    'external-link': ExternalLinkComponent,
+  },
 });
 </script>

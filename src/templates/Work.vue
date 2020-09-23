@@ -41,9 +41,9 @@
               v-if="link.url.startsWith('http')"
               :key="link.url"
               :href="link.url"
-              class="flex flex-row items-center"
+              class="flex flex-row items-center ml-6"
             >
-              <export-icon />
+              <export-icon class="h-4 w-4 -ml-6 absolute" />
               <span>{{ link.label }}</span>
             </ex-link>
             <internal-link

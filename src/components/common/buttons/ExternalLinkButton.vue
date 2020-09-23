@@ -4,7 +4,7 @@
     :class="buttonClasses"
     class="inline-flex flex-row items-center"
   >
-    <export-icon />
+    <export-icon class="w-4 h-4 mr-1" />
     <slot />
   </external-link>
 </template>
@@ -21,16 +21,16 @@ import ExportIcon from '@/components/common/icons/Export.vue';
 export default defineComponent({
   props: {
     href: String,
-    type: defineEnumProperty<InfoLevel>('neutral')
+    type: defineEnumProperty<InfoLevel>('neutral'),
   },
   setup(props) {
     return {
-      buttonClasses: useButtonClasses(toRef(props, 'type'))
+      buttonClasses: useButtonClasses(toRef(props, 'type')),
     };
   },
   components: {
     'export-icon': ExportIcon,
-    'external-link': ExternalLinkComponent
-  }
+    'external-link': ExternalLinkComponent,
+  },
 });
 </script>
