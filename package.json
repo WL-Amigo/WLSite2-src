@@ -2,7 +2,7 @@
   "name": "whiteluckbringers-site-2",
   "private": true,
   "scripts": {
-    "build:server": "$(yarn bin esbuild) --bundle ./server/gridsome.server.ts --outfile=./server/dist/index.js --minify --platform=node",
+    "build:server": "esbuild --bundle ./server/gridsome.server.ts --outfile=./server/dist/index.js --minify --platform=node",
     "build": "yarn build:server && gridsome build",
     "serve": "yarn build:server && gridsome develop",
     "explore": "gridsome explore"
