@@ -1,6 +1,6 @@
 <template>
   <div v-if="work" class="container mx-auto">
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
       <carousel :images="work.screenshots" />
       <div class="py-2 space-y-1">
         <h1 class="text-3xl font-bold">{{ work.title }}</h1>
