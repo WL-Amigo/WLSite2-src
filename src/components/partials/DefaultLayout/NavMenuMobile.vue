@@ -17,7 +17,7 @@
       </svg>
     </button>
 
-    <div :class="menuAreaClasses">
+    <div :class="menuAreaClasses" class="z-nav">
       <div
         class="w-screen h-screen absolute inset-0 bg-black bg-opacity-75 text-white py-4 flex flex-col justify-center"
       >
@@ -38,16 +38,17 @@
           </svg>
         </button>
         <div
-          class="divide-y-2 divide-white divide-dashed divide-opacity-50 mx-4"
+          class="divide-y-2 divide-white divide-dashed divide-opacity-50 mx-4 flex flex-col"
         >
-          <g-link to="/" class="w-full my-2 p-2 bg-white bg-opacity-25 text-xl">
-            制作物一覧
+          <g-link to="/" class="" @click.native="isOpen = false">
+            <div class="my-2 p-2 bg-white bg-opacity-25 text-xl">
+              制作物一覧
+            </div>
           </g-link>
-          <g-link
-            to="/profile/"
-            class="w-full my-2 p-2 bg-white bg-opacity-25 text-xl"
-          >
-            プロフィール
+          <g-link to="/profile/" class="" @click.native="isOpen = false">
+            <div class="my-2 p-2 bg-white bg-opacity-25 text-xl">
+              プロフィール
+            </div>
           </g-link>
         </div>
       </div>
@@ -69,7 +70,7 @@ export default defineComponent({
         'overflow-hidden',
         'transition-menu',
         'duration-200',
-        'ease-out'
+        'ease-out',
       ];
       return isOpen.value
         ? defaultClasses.concat(['w-screen', 'left-0'])
@@ -78,8 +79,8 @@ export default defineComponent({
 
     return {
       isOpen,
-      menuAreaClasses
+      menuAreaClasses,
     };
-  }
+  },
 });
 </script>

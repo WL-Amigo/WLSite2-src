@@ -32,6 +32,9 @@ module.exports = {
       transitionProperty: {
         menu: 'left, width',
       },
+      zIndex: {
+        nav: '100',
+      },
     },
   },
   variants: {},
