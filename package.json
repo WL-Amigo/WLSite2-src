@@ -5,6 +5,8 @@
     "build:server": "esbuild --bundle ./server/gridsome.server.ts --outfile=./server/dist/index.js --minify --platform=node",
     "build": "yarn build:server && gridsome build",
     "serve": "yarn build:server && gridsome develop",
+    "optimize": "yarn optimize:contents-images",
+    "optimize:contents-images": "ts-node -P ./scripts/tsconfig.json ./scripts/OptimizeImages.ts",
     "explore": "gridsome explore"
   },
   "dependencies": {
@@ -20,6 +22,7 @@
     "@gridsome/transformer-remark": "^0.6.2",
     "@types/fs-extra": "^9.0.1",
     "@types/js-yaml": "^3.12.5",
+    "@types/klaw": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "^4.1.0",
     "@typescript-eslint/parser": "^4.1.0",
     "@vue/eslint-config-prettier": "^6.0.0",
@@ -31,8 +34,10 @@
     "fs-extra": "^9.0.1",
     "gridsome-plugin-typescript": "^0.4.0",
     "js-yaml": "^3.14.0",
+    "klaw": "^3.0.0",
     "prettier": "^2.1.2",
     "ts-loader": "^8.0.4",
+    "ts-node": "^9.0.0",
     "typescript": "^4.0.3",
     "vue-router": "^3.4.3"
   }

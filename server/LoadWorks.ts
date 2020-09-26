@@ -28,13 +28,13 @@ export async function loadWorks(actions: GridsomeDataStoreAPI) {
       );
     }
     const bannerPath = pathResolve(
-      pathJoin(WorksRootDir, workDir, 'banner.png')
+      pathJoin(WorksRootDir, workDir, 'banner.jpg')
     );
     const screenshotPaths: string[] = [];
     const ssFileNames = Array.from(
       { length: MaxCountScreenshots },
       (_, i) => i + 1
-    ).map((v) => `ss${v}.png`);
+    ).map((v) => `ss${v}.jpg`);
     for (const fn of ssFileNames) {
       const ssPath = pathJoin(WorksRootDir, workDir, fn);
       if (!(await pathExists(ssPath))) {
