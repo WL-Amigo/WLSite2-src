@@ -6,6 +6,7 @@
 
 module.exports = {
   siteName: 'WhiteLuckBringers - 白い幸運屋',
+  icon: './src/assets/images/logo.svg',
   templates: {
     Work: '/work/:id',
   },
