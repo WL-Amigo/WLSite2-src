@@ -10,6 +10,7 @@ technologies:
   - Gridsome
   - TypeScript
   - Tailwind CSS
+  - Netlify
 description: |
   本サイトです。
 
@@ -18,6 +19,12 @@ description: |
   今まで2回サイトを作ろうとして挫折してきたため、楽しく(楽に)更新できるよう、コンテンツとそれらをレンダリングするコードを最初から可能な限り分離して制作しています。
 
   Gridsome が Vue 3.x 系に対応予定のため、対応次第 Vue 3.x 系に移行するつもりです。
+functionalities:
+  - 今まで制作・発表した作品の一覧及び詳細
+  - 得意な技術・触れたことのある技術・経歴等を示したプロフィール
+improvements:
+  - 作品についてはソースコードとコンテンツを分離し、コンテンツのみ増やせば自動的に一覧・詳細ページが出来上がる仕組みを構成
+impact: []
 earnedExperiences: 
   - Vue.js + Tailwind CSS によるポートフォリオサイト構成
   - Gridsome のブートストラップ処理の TypeScript による記述

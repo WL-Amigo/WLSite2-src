@@ -1,0 +1,21 @@
+id: loop-mid-to-loop-ogg
+title: LoopMID2LoopOGG
+publishDate: 2017-01
+github: https://github.com/WL-Amigo/LoopMID2LoopOGG
+category: desktopapp
+technologies:
+  - Qt 5
+  - Midifile
+  - Standard MIDI File
+  - Timidity++
+  - AppImage
+description: |
+  (TBW)
+functionalities:
+  - ""
+improvements:
+  - ""
+impact:
+  - ""
+earnedExperiences: 
+  - (TBW)

@@ -64,3 +64,27 @@ quicktype:
 ts-morph:
   url: https://ts-morph.com/
   type: general
+Web Worker:
+  url: https://developer.mozilla.org/ja/docs/Web/API/Web_Workers_API
+  type: web-frontend
+jsgif:
+  url: https://github.com/antimatter15/jsgif
+  type: web-frontend
+FileSaver.js:
+  url: https://github.com/eligrey/FileSaver.js/
+  type: web-frontend
+JSZip:
+  url: https://stuk.github.io/jszip/
+  type: general
+jscolor:
+  url: https://jscolor.com/
+  type: web-frontend
+canvg:
+  url: https://github.com/canvg/canvg
+  type: web-frontend
+GitHub Pages:
+  url: https://pages.github.com/
+  type: web-frontend
+Netlify:
+  url: https://www.netlify.com/
+  type: web-frontend

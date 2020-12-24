@@ -10,14 +10,20 @@ technologies:
   - Bulma CSS Framework
   - Buefy
   - Sharp(Node.js)
+  - Netlify
 description: |
   201x年から基本年1回開催の「博麗電脳試遊会」の公式ウェブサイトです。博麗電脳試遊会とは、東方Projectの二次創作ゲームを来場者が試遊できるイベントです。また、ウェブ上でゲームを展示、ダウンロードも出来るイベント「博麗電脳試遊会 EXTRA」も同時併催しています。
   独立した公式ウェブサイトの形が取られたのは2018年からで、その時点からデザイン以外のウェブサイト構成を担当しています。
 
   静的サイト構成に Vue.js を用いることが出来るフレームワーク Gridsome を用いつつ、更新がなるべく楽になるよう構造を考えながら作成しています。
 earnedExperiences: 
-  - 頻繁に変更されるテキスト等を分離することによる変更しやすさの向上
   - Bulma CSS Framework を用いたウェブサイト構成
+functionalities:
+  - 博麗電脳試遊会 各種イベント情報の掲示
+  - 参加サークル一覧の掲示 (サークル参加登録締切後)
+improvements:
+  - 頻繁に変更されるテキスト等を分離することで変更しやすさを向上
+impact: []
 links:
   - label: 博麗電脳試遊会 サークル参加者向けコントロールパネル 作品紹介
     url: /work/hakudenkai-circle-control-panel
