@@ -3,13 +3,14 @@
   "private": true,
   "scripts": {
     "build:server": "esbuild --bundle ./server/gridsome.server.ts --outfile=./server/dist/index.js --minify --platform=node",
-    "build": "yarn build:server && gridsome build",
-    "serve": "yarn build:server && gridsome develop",
-    "optimize": "yarn optimize:contents-images",
+    "build": "pnpm build:server && gridsome build",
+    "serve": "pnpm build:server && gridsome develop",
+    "optimize": "pnpm optimize:contents-images",
     "optimize:contents-images": "ts-node -P ./scripts/tsconfig.json ./scripts/OptimizeImages.ts",
     "explore": "gridsome explore",
     "lint": "eslint ./src/**/*.vue ./src/**/*.ts",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "pnpm lint --fix",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@vue/composition-api": "^1.0.0-beta.14",
