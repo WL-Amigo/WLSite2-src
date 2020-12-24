@@ -1,7 +1,7 @@
 import {
   getCurrentInstance,
   computed,
-  ComputedRef
+  ComputedRef,
 } from '@vue/composition-api';
 
 export function useStaticQuery<T>(): ComputedRef<T | null> {

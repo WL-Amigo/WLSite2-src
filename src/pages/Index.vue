@@ -8,10 +8,10 @@ import WorkList from '@/components/WorkList.vue';
 
 export default defineComponent({
   metaInfo: {
-    title: 'Works'
+    title: 'Works',
   },
   components: {
-    'work-list': WorkList
-  }
+    'work-list': WorkList,
+  },
 });
 </script>
