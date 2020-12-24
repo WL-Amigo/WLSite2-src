@@ -7,7 +7,7 @@
       <button
         v-for="(_, idx) in images"
         :key="idx"
-        class="rounded-full w-4 h-4 mx-2 transition-colors duration-200 ease-out"
+        class="rounded-full w-4 h-4 mx-2 transition-colors duration-200 ease-out focus:outline-none"
         :class="getIndicatorClasses(idx, page)"
         @click="page = idx"
       />
