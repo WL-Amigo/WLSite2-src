@@ -9,6 +9,13 @@ export type Work = {
   category: WorkCategory;
   technologies: string[];
   description: string;
+  highlightAssets: {
+    title: string;
+    path: string;
+  }[];
+  functionalities: string[];
+  improvements: string[];
+  impact: string[];
   earnedExperiences: string[];
   links?: {
     label: string;

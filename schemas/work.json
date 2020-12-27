@@ -44,6 +44,27 @@
         "type": "string"
       }
     },
+    "description": {
+      "type": "string",
+      "description": "説明"
+    },
+    "highlightAssets": {
+      "type": "array",
+      "description": "強調したい画像等",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type":"string",
+            "description": "表示名"
+          },
+          "path": {
+            "type":"string",
+            "description": "アセットへのパス(shared-assets/ からの相対パス)"
+          }
+        }
+      }
+    },
     "earnedExperiences": {
       "type": "array",
       "description": "得られた経験",
