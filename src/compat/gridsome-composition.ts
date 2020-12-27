@@ -5,7 +5,7 @@ import {
 } from '@vue/composition-api';
 
 export function useStaticQuery<T>(): ComputedRef<T | null> {
-  const vm = getCurrentInstance();
+  const vm = getCurrentInstance()?.proxy;
   return computed(() => {
     const vmLocal = vm;
     const staticQuery = vmLocal?.$static;
@@ -18,7 +18,7 @@ export function useStaticQuery<T>(): ComputedRef<T | null> {
 }
 
 export function usePageQuery<T>(): ComputedRef<T | null> {
-  const vm = getCurrentInstance();
+  const vm = getCurrentInstance()?.proxy;
   return computed(() => {
     const vmLocal = vm;
     const pageQuery = vmLocal?.$page;
