@@ -2,7 +2,7 @@
   "name": "whiteluckbringers-site-2",
   "private": true,
   "scripts": {
-    "build:server": "esbuild --bundle ./server/gridsome.server.ts --outfile=./server/dist/index.js --minify --platform=node",
+    "build:server": "esbuild --bundle ./server/gridsome.server.ts --outfile=./server/dist/index.js --minify --platform=node --external:express",
     "build": "pnpm build:server && gridsome build",
     "serve": "pnpm build:server && gridsome develop",
     "optimize": "pnpm optimize:contents-images",
@@ -18,7 +18,7 @@
     "@vue/composition-api": "^1.0.0-beta.22",
     "gridsome": "^0.7.21",
     "vue-i18n": "^8.21.1",
-    "vue-i18n-composable": "^0.2.0",
+    "vue-i18n-composable": "^0.2.1",
     "vue-meta": "^2.4.0"
   },
   "devDependencies": {
@@ -36,7 +36,8 @@
     "esbuild": "^0.8.26",
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^7.1.0",
-    "eslint-plugin-vue": "^7.3.0",
+    "eslint-plugin-vue": "^7.4.0",
+    "express": "^4.17.1",
     "fs-extra": "^9.0.1",
     "gridsome-plugin-typescript": "^0.4.0",
     "js-yaml": "^3.14.0",

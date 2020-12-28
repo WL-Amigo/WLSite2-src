@@ -19,7 +19,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from '@vue/composition-api';
 import { Work } from '@/types/Work';
-import { useI18n } from '@/compat/vue-i18n-composable';
+import { useI18n } from 'vue-i18n-composable';
 
 export default defineComponent({
   props: {
