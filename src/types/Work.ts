@@ -9,9 +9,11 @@ export type Work = {
   category: WorkCategory;
   technologies: string[];
   description: string;
-  highlightAssets: {
+  highlightAssets?: {
     title: string;
     path: string;
+    // GraphQL Layer への読み込み時に拡張
+    imagePath: Record<string, unknown>;
   }[];
   functionalities: string[];
   improvements: string[];
