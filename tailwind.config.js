@@ -34,6 +34,7 @@ module.exports = {
       },
       zIndex: {
         nav: '100',
+        modal: '200',
       },
     },
   },

@@ -1,7 +1,21 @@
 <template>
   <div v-if="work" class="container mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-      <carousel :images="work.screenshots" />
+      <div class="w-full">
+        <carousel :images="work.screenshots" />
+        <div
+          class="pt-6 space-y-2"
+          v-if="work.highlightAssets && work.highlightAssets.length > 0"
+        >
+          <highlight-asset-button
+            v-for="(asset, idx) in work.highlightAssets"
+            :key="asset.title"
+            :gsrc="asset.imagePath"
+            :title="asset.title"
+            @click="onOpenHighlightAssetsCarousel(idx)"
+          />
+        </div>
+      </div>
       <div class="py-2 space-y-6">
         <div class="space-y-1">
           <h1 class="text-3xl font-bold">{{ work.title }}</h1>
@@ -104,6 +118,12 @@
         </div>
       </div>
     </div>
+
+    <fullscreen-carousel
+      :images="carouselSources"
+      :indexOnMounted="carouselIndexToShow"
+      :isOpen.sync="isFullscreenCarouselOpened"
+    />
   </div>
 </template>
 
@@ -136,7 +156,7 @@ query($id: ID!) {
 <script lang="ts">
 import { usePageQuery } from '@/compat/gridsome-composition';
 import { Work } from '@/types/Work';
-import { computed, defineComponent } from '@vue/composition-api';
+import { computed, defineComponent, ref } from '@vue/composition-api';
 
 import TechTag from '@/components/partials/Work/TechTag.vue';
 import SimpleLinesView from '@/components/common/content-viewer/SimpleLines.vue';
@@ -150,6 +170,7 @@ import SpeakerPhoneIcon from '@/components/common/icons/SpeakerPhone.vue';
 import TrendingUpIcon from '@/components/common/icons/TrendingUp.vue';
 import CogIcon from '@/components/common/icons/Cog.vue';
 import Link from '@/components/common/icons/Link.vue';
+import FullscreenCarousel from '@/components/common/carousel/FullscreenCarousel.vue';
 
 type WorkQuery = {
   work: Work;
@@ -181,9 +202,23 @@ export default defineComponent({
       }
     });
 
+    const carouselSources = ref<string[]>([]);
+    const carouselIndexToShow = ref(0);
+    const isFullscreenCarouselOpened = ref(false);
+    const onOpenHighlightAssetsCarousel = (idx: number) => {
+      carouselSources.value =
+        work.value?.highlightAssets?.map((a) => a.path) ?? [];
+      carouselIndexToShow.value = idx;
+      isFullscreenCarouselOpened.value = true;
+    };
+
     return {
       work,
       urlDisplayText,
+      carouselSources,
+      carouselIndexToShow,
+      isFullscreenCarouselOpened,
+      onOpenHighlightAssetsCarousel,
     };
   },
   components: {
@@ -199,6 +234,7 @@ export default defineComponent({
     'export-icon': ExportIcon,
     'github-icon': GitHubIcon,
     'internal-link': InternalLink,
+    'fullscreen-carousel': FullscreenCarousel,
   },
 });
 </script>

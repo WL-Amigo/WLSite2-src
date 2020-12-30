@@ -4,9 +4,24 @@ import { readFile, readdir, stat, pathExists } from 'fs-extra';
 import { join as pathJoin, resolve as pathResolve } from 'path';
 
 const WorksRootDir = './contents/works/';
+const SharedAssetsDir = './contents/shared-assets/';
+const ServedSharedAssetsPath = '/shared-assets/';
 const MaxCountScreenshots = 10;
 
-export async function loadWorks(actions: GridsomeDataStoreAPI) {
+// TODO: 作品データ型定義共通化
+type Work = {
+  highlightAssets?: {
+    title: string;
+    path: string;
+  }[];
+};
+type HighlightAssetsExtended = {
+  title: string;
+  path: string;
+  imagePath: string;
+};
+
+export async function loadWorks(actions: GridsomeDataStoreAPI): Promise<void> {
   const workDirs = await readdir(WorksRootDir);
   const workCollection = actions.addCollection('Work');
 
@@ -15,10 +30,10 @@ export async function loadWorks(actions: GridsomeDataStoreAPI) {
       continue;
     }
 
-    const workData = safeLoad(
+    const workDataRaw = safeLoad(
       await readFile(pathJoin(WorksRootDir, workDir, 'data.yaml'), 'utf8')
     );
-    if (typeof workData !== 'object') {
+    if (typeof workDataRaw !== 'object') {
       throw new Error(
         `次の制作物データの読み込みが失敗しました: ${pathJoin(
           WorksRootDir,
@@ -27,6 +42,7 @@ export async function loadWorks(actions: GridsomeDataStoreAPI) {
         )}`
       );
     }
+    const workData = workDataRaw as Work;
     const bannerPath = pathResolve(
       pathJoin(WorksRootDir, workDir, 'banner.jpg')
     );
@@ -43,10 +59,26 @@ export async function loadWorks(actions: GridsomeDataStoreAPI) {
       screenshotPaths.push(pathResolve(ssPath));
     }
 
+    const highlightAssets: HighlightAssetsExtended[] = [];
+    if (workData.highlightAssets !== undefined) {
+      highlightAssets.push(
+        ...workData.highlightAssets.map((a) => {
+          const localImagePath = pathJoin(SharedAssetsDir, a.path);
+          const servedImagePath = pathJoin(ServedSharedAssetsPath, a.path);
+          return {
+            title: a.title,
+            path: servedImagePath,
+            imagePath: pathResolve(localImagePath),
+          };
+        })
+      );
+    }
+
     workCollection.addNode({
       ...workData,
       banner: bannerPath,
       screenshots: screenshotPaths,
+      highlightAssets: highlightAssets,
     });
   }
 }

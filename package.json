@@ -5,6 +5,7 @@
     "build:server": "esbuild --bundle ./server/gridsome.server.ts --outfile=./server/dist/index.js --minify --platform=node --external:express",
     "build": "pnpm build:server && gridsome build",
     "serve": "pnpm build:server && gridsome develop",
+    "serve:static": "pnpm build && serve ./dist/",
     "optimize": "pnpm optimize:contents-images",
     "optimize:contents-images": "ts-node -P ./scripts/tsconfig.json ./scripts/OptimizeImages.ts",
     "explore": "gridsome explore",
