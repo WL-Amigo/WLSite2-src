@@ -1,4 +1,7 @@
 [build]
   publish = "dist/"
-  command = "yarn build"
-  environment = { YARN_FLAGS = "--no-ignore-optional" }
+  command = "npm run build"
+
+[build.environment]
+  NPM_FLAGS="--prefix=/dev/null"
+  NODE_VERSION="lts/fermium"

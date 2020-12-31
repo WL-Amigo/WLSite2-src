@@ -26,6 +26,7 @@ devDependencies:
   js-yaml: 3.14.1
   klaw: 3.0.0
   license-checker: 25.0.1
+  pnpm: 5.14.1
   postcss: 7.0.35
   postcss-loader: 3.0.0
   prettier: 2.2.1
@@ -7635,6 +7636,13 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-OLdT+4JZx5BqE1CFJkrvomYV0aSsv6x2Bba+aWaVc0PMfWlE+ZByNKYAdKeIqsM4uvW1HOSEHnf8KcOnykPNxA==
+  /pnpm/5.14.1:
+    dev: true
+    engines:
+      node: '>=10.16'
+    hasBin: true
+    resolution:
+      integrity: sha512-zxdmGEMcvJq5JU4lb3s48xbDnT9C7PHk/aOO7kefgA2LklOuEakRx2sKyGyWRykyQMtOS7h1rD4kdCWsOrh6Hg==
   /portfinder/1.0.28:
     dependencies:
       async: 2.6.3
@@ -10721,6 +10729,7 @@ specifiers:
   js-yaml: ^3.14.0
   klaw: ^3.0.0
   license-checker: ^25.0.1
+  pnpm: ^5.14.1
   postcss: ^7
   postcss-loader: ^3.0.0
   prettier: ^2.1.2
