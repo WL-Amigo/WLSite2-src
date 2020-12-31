@@ -9,7 +9,7 @@ const TargetDirs = ['./contents/works/'];
 const QualityValue = 85;
 
 async function optimizeImage(filepath: string): Promise<void> {
-  await new Promise((res, rej) => {
+  await new Promise<void>((res, rej) => {
     const filenameWithoutExtension = pathJoin(
       dirname(filepath),
       basename(filepath, extname(filepath))

@@ -1,4 +1,4 @@
-import { GridsomeDataStoreAPI } from './gridsome.types';
+import { GridsomeDataStoreAPI, GridsomePlugin } from './gridsome.types';
 import { safeLoad } from 'js-yaml';
 import { readFile, readdir, stat, pathExists } from 'fs-extra';
 import { join as pathJoin, resolve as pathResolve } from 'path';
@@ -21,7 +21,7 @@ type HighlightAssetsExtended = {
   imagePath: string;
 };
 
-export async function loadWorks(actions: GridsomeDataStoreAPI): Promise<void> {
+async function loadWorks(actions: GridsomeDataStoreAPI): Promise<void> {
   const workDirs = await readdir(WorksRootDir);
   const workCollection = actions.addCollection('Work');
 
@@ -82,3 +82,7 @@ export async function loadWorks(actions: GridsomeDataStoreAPI): Promise<void> {
     });
   }
 }
+
+export const LoadWorksPlugin: GridsomePlugin = {
+  loadSource: loadWorks,
+};

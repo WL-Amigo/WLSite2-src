@@ -1,15 +1,27 @@
 import type { Application } from 'express';
 
-export type GridsomeAPI = {
-  loadSource(fn: (actions: GridsomeDataStoreAPI) => void | Promise<void>): void;
-  configureServer(fn: (app: Application) => void): void;
-  afterBuild(fn: () => void | Promise<void>): void;
-};
+type LoadSourceFunction = (
+  actions: GridsomeDataStoreAPI
+) => void | Promise<void>;
+type ConfigureServerFunction = (app: Application) => void;
+type AfterBuildFunction = () => void | Promise<void>;
 
-export type GridsomeDataStoreAPI = {
+export interface GridsomePlugin {
+  loadSource?: LoadSourceFunction;
+  configureServer?: ConfigureServerFunction;
+  afterBuild?: AfterBuildFunction;
+}
+
+export interface GridsomeAPI {
+  loadSource(fn: LoadSourceFunction): void;
+  configureServer(fn: ConfigureServerFunction): void;
+  afterBuild(fn: AfterBuildFunction): void;
+}
+
+export interface GridsomeDataStoreAPI {
   addCollection(options: string | Record<string, unknown>): GridsomeCollection;
-};
+}
 
-export type GridsomeCollection = {
+export interface GridsomeCollection {
   addNode(data: Record<string, unknown>): void;
-};
+}

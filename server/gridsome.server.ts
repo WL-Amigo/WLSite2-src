@@ -1,13 +1,19 @@
 import { GridsomeAPI } from './gridsome.types';
-import { loadWorks } from './LoadWorks';
-import {
-  copySharedAssetsToDist,
-  mountSharedAssetsOnDevServer,
-} from './MountSharedAssets';
+import { LoadWorksPlugin } from './LoadWorks';
+import { MountSharedAssetPlugin } from './MountSharedAssets';
 
 export function gridsomeSetup(api: GridsomeAPI): void {
-  api.loadSource(loadWorks);
+  const plugins = [LoadWorksPlugin, MountSharedAssetPlugin];
 
-  api.configureServer(mountSharedAssetsOnDevServer);
-  api.afterBuild(copySharedAssetsToDist);
+  for (const plugin of plugins) {
+    if (plugin.loadSource !== undefined) {
+      api.loadSource(plugin.loadSource);
+    }
+    if (plugin.configureServer !== undefined) {
+      api.configureServer(plugin.configureServer);
+    }
+    if (plugin.afterBuild !== undefined) {
+      api.afterBuild(plugin.afterBuild);
+    }
+  }
 }
