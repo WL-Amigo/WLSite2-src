@@ -7,3 +7,4 @@ dist
 .env
 .env.*
 bu_*
+bundle-stats.html

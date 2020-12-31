@@ -5,7 +5,7 @@
     - Buefy(Bulma), Ant Design Vue, Tailwind CSS と組み合わせたフロントエンド開発
     - provide/inject を活用したビジネスロジックのコード分離
 - name: Typescript
-  experience: 趣味でのアプリ・コマンドラインツール開発
+  experience: React アプリでの実務経験(半年程度)、趣味でのアプリ・コマンドラインツール開発
   abilities:
     - オブジェクト指向言語としての活用(Dependency Injection、デザインパターンの応用など)
     - String Literal Types, Type Alias, Union Type 等、Typescript の型表現機能の応用
