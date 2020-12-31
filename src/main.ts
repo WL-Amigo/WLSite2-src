@@ -14,6 +14,7 @@ import Vue, { VueConstructor, ComponentOptions } from 'vue';
 import Router from 'vue-router';
 import { MetaInfo, AttributeProperty } from 'vue-meta';
 import { I18n } from './locales/Translations';
+import { makeOGPTags } from './utils/metainfo/OGP';
 
 type GridsomeSetupContext = {
   router: Router;
@@ -43,4 +44,6 @@ export default function (
   HtmlAttrs['lang'] = 'ja';
 
   head.htmlAttrs = HtmlAttrs;
+
+  head.meta?.push(...makeOGPTags());
 }

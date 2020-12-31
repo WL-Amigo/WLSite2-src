@@ -174,6 +174,7 @@ import TrendingUpIcon from '@/components/common/icons/TrendingUp.vue';
 import CogIcon from '@/components/common/icons/Cog.vue';
 import Link from '@/components/common/icons/Link.vue';
 import FullscreenCarousel from '@/components/common/carousel/FullscreenCarousel.vue';
+import { makeOGPTags } from '@/utils/metainfo/OGP';
 
 type WorkQuery = {
   work: Work;
@@ -182,8 +183,14 @@ type WorkQuery = {
 export default defineComponent({
   metaInfo() {
     const workQuery = this.$page as WorkQuery;
+    const title = `${workQuery.work.title} 作品紹介`;
+
     return {
-      title: `${workQuery.work.title} 作品紹介`,
+      title: title,
+      meta: makeOGPTags({
+        title: title,
+        description: '',
+      }),
     };
   },
   setup() {
