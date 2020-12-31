@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <div class="w-full group relative">
+    <div class="w-full group relative cursor-pointer">
       <template v-for="(image, idx) in images">
         <div class="flex flex-row justify-center" :key="idx">
           <g-image v-if="page === idx" :src="image" />
@@ -8,6 +8,7 @@
       </template>
       <div
         class="lg:opacity-0 group-hover:opacity-100 transition-opacity absolute inset-0 w-full h-full"
+        @click="onImageClick"
       >
         <div
           class="absolute left-0 top-0 w-8 lg:w-12 h-full flex flex-row items-center"
@@ -56,7 +57,7 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props) {
+  setup(props, ctx) {
     const page = ref(0);
     const getIndicatorClasses = (idx: number, currentPage: number) =>
       idx === currentPage ? ['bg-gray-600'] : ['bg-gray-300'];
@@ -66,6 +67,8 @@ export default defineComponent({
     const onPrev = () => {
       page.value = (page.value + props.images.length - 1) % props.images.length;
     };
+
+    const onImageClick = () => ctx.emit('click', page.value);
 
     // props.images を監視して、変更があったらインデックスを0に戻すようにする
     watch(
@@ -78,6 +81,7 @@ export default defineComponent({
       page,
       onNext,
       onPrev,
+      onImageClick,
       getIndicatorClasses,
     };
   },

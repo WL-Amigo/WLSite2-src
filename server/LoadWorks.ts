@@ -1,7 +1,13 @@
-import { GridsomeDataStoreAPI, GridsomePlugin } from './gridsome.types';
+import {
+  AfterBuildFunction,
+  ConfigureServerFunction,
+  GridsomeDataStoreAPI,
+  GridsomePlugin,
+} from './gridsome.types';
 import { safeLoad } from 'js-yaml';
-import { readFile, readdir, stat, pathExists } from 'fs-extra';
+import { readFile, readdir, stat, pathExists, copy, mkdirp } from 'fs-extra';
 import { join as pathJoin, resolve as pathResolve } from 'path';
+import { static as expressStatic } from 'express';
 
 const WorksRootDir = './contents/works/';
 const SharedAssetsDir = './contents/shared-assets/';
@@ -47,16 +53,18 @@ async function loadWorks(actions: GridsomeDataStoreAPI): Promise<void> {
       pathJoin(WorksRootDir, workDir, 'banner.jpg')
     );
     const screenshotPaths: string[] = [];
+    const originalScreenshotPaths: string[] = [];
     const ssFileNames = Array.from(
       { length: MaxCountScreenshots },
-      (_, i) => i + 1
-    ).map((v) => `ss${v}.jpg`);
+      (_, i) => `ss${i + 1}.jpg`
+    );
     for (const fn of ssFileNames) {
       const ssPath = pathJoin(WorksRootDir, workDir, fn);
       if (!(await pathExists(ssPath))) {
         break;
       }
       screenshotPaths.push(pathResolve(ssPath));
+      originalScreenshotPaths.push(pathJoin('/assets/works', workDir, fn));
     }
 
     const highlightAssets: HighlightAssetsExtended[] = [];
@@ -78,11 +86,43 @@ async function loadWorks(actions: GridsomeDataStoreAPI): Promise<void> {
       ...workData,
       banner: bannerPath,
       screenshots: screenshotPaths,
+      originalScreenshots: originalScreenshotPaths,
       highlightAssets: highlightAssets,
     });
   }
 }
 
+const mountRawScreenShotsOnDevServer: ConfigureServerFunction = (app) => {
+  app.use('/assets/works', expressStatic('./contents/works'));
+};
+
+const copyRawScreenShots: AfterBuildFunction = async () => {
+  const workDirs = await readdir(WorksRootDir);
+  for (const workDir of workDirs) {
+    if (!(await stat(pathJoin(WorksRootDir, workDir))).isDirectory()) {
+      continue;
+    }
+
+    const destDistributionDir = pathJoin('./dist/assets/works', workDir);
+    await mkdirp(destDistributionDir);
+
+    const ssFileNames = Array.from(
+      { length: MaxCountScreenshots },
+      (_, i) => `ss${i + 1}.jpg`
+    );
+    for (const fn of ssFileNames) {
+      const ssPath = pathJoin(WorksRootDir, workDir, fn);
+      if (!(await pathExists(ssPath))) {
+        break;
+      }
+
+      await copy(pathResolve(ssPath), pathJoin(destDistributionDir, fn));
+    }
+  }
+};
+
 export const LoadWorksPlugin: GridsomePlugin = {
   loadSource: loadWorks,
+  configureServer: mountRawScreenShotsOnDevServer,
+  afterBuild: copyRawScreenShots,
 };

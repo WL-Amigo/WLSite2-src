@@ -2,7 +2,10 @@
   <div v-if="work" class="container mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
       <div class="w-full">
-        <carousel :images="work.screenshots" />
+        <carousel
+          :images="work.screenshots"
+          @click="onOpenScreenshotFullscreenCarousel($event)"
+        />
         <div
           class="pt-6 space-y-2"
           v-if="work.highlightAssets && work.highlightAssets.length > 0"
@@ -148,7 +151,7 @@ query($id: ID!) {
       label
     }
     screenshots (width: 640, height: 480, quality: 85, fit: contain, background: "#FFF")
-    originalScreenshots: screenshots (quality: 100)
+    originalScreenshots
   }
 }
 </page-query>
@@ -211,6 +214,11 @@ export default defineComponent({
       carouselIndexToShow.value = idx;
       isFullscreenCarouselOpened.value = true;
     };
+    const onOpenScreenshotFullscreenCarousel = (idx: number) => {
+      carouselSources.value = work.value?.originalScreenshots ?? [];
+      carouselIndexToShow.value = idx;
+      isFullscreenCarouselOpened.value = true;
+    };
 
     return {
       work,
@@ -219,6 +227,7 @@ export default defineComponent({
       carouselIndexToShow,
       isFullscreenCarouselOpened,
       onOpenHighlightAssetsCarousel,
+      onOpenScreenshotFullscreenCarousel,
     };
   },
   components: {

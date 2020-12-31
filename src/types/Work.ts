@@ -1,4 +1,6 @@
-export type Work = {
+import { GridsomeImage } from './Gridsome';
+
+export interface Work {
   // YAML データの内容
   id: string;
   title: string;
@@ -13,7 +15,7 @@ export type Work = {
     title: string;
     path: string;
     // GraphQL Layer への読み込み時に拡張
-    imagePath: Record<string, unknown>;
+    imagePath: GridsomeImage;
   }[];
   functionalities: string[];
   improvements: string[];
@@ -25,7 +27,8 @@ export type Work = {
   }[];
   // 以下は GraphQL Layer への読み込み時に追加
   banner: string;
-  screenshots: string[];
-};
+  screenshots: GridsomeImage[];
+  originalScreenshots: string[];
+}
 
 export type WorkCategory = 'website' | 'webapp' | 'desktopapp';

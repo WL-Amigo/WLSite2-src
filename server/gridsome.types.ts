@@ -1,10 +1,10 @@
 import type { Application } from 'express';
 
-type LoadSourceFunction = (
+export type LoadSourceFunction = (
   actions: GridsomeDataStoreAPI
 ) => void | Promise<void>;
-type ConfigureServerFunction = (app: Application) => void;
-type AfterBuildFunction = () => void | Promise<void>;
+export type ConfigureServerFunction = (app: Application) => void;
+export type AfterBuildFunction = () => void | Promise<void>;
 
 export interface GridsomePlugin {
   loadSource?: LoadSourceFunction;
