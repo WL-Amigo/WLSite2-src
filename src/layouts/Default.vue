@@ -14,7 +14,11 @@
       <slot />
     </div>
     <div class="text-center py-8 text-gray-600">
-      <p>&copy; 2020 Amigo (WhiteLuckBringers)</p>
+      <span>&copy; 2020 Amigo (WhiteLuckBringers)</span>
+      <span class="mx-2">-</span>
+      <g-link to="/licenses" class="underline hover:text-gray-800"
+        >licenses
+      </g-link>
     </div>
   </div>
 </template>

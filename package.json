@@ -13,6 +13,7 @@
     "lint:fix": "pnpm lint -- --fix",
     "format": "prettier --write ./src/**/*.{vue,ts}",
     "fix:all": "pnpm format && pnpm lint:fix",
+    "get:licenses": "license-checker --json",
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
@@ -43,6 +44,7 @@
     "gridsome-plugin-typescript": "^0.4.0",
     "js-yaml": "^3.14.0",
     "klaw": "^3.0.0",
+    "license-checker": "^25.0.1",
     "postcss": "^7",
     "postcss-loader": "^3.0.0",
     "prettier": "^2.1.2",
