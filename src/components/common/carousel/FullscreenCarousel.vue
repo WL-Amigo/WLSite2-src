@@ -27,7 +27,7 @@
                 v-if="idx === currentIndex"
                 height="100%"
                 width="100%"
-                class="object-contain absolute inset-0 w-full h-full"
+                class="object-scale-down absolute inset-0 w-full h-full"
               />
             </template>
           </transition>
