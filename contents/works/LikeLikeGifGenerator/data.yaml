@@ -1,6 +1,7 @@
 id: like-like-animation-generator
 title: いいね風エフェクトアニメジェネレータ
 publishDate: 2016-03
+url: http://wl-amigo.github.io/LikeLikeEffectGenerator/
 github: https://github.com/WL-Amigo/LikeLikeEffectGenerator
 category: webapp
 technologies:
@@ -19,6 +20,8 @@ description: |
   某 SNS のいいねボタンの仕様変更(以前はお気に入りボタンでした)に伴いエフェクトが可愛くなっていたのを見て、勢いで作りました。
   
   また、その後某 SNS が10周年を迎えた時にごく短い期間だけエフェクトの仕様が変化し、そちらも面白かったので勢いでジェネレータの追加を行いました。その際にフレーム生成用のパーティクルシステムを自前で制作しました。
+
+  (スクリーンショット内キャラクター画像はプロ生ちゃんをお借りしています(© 2019 合同会社プロ生))
 functionalities:
   - 任意の入力画像に某 SNS のいいねボタン風のエフェクトを合成して GIF/フレーム毎PNG で出力
   - 出力サイズやエフェクトの色などのカスタマイズ

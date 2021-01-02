@@ -16,6 +16,9 @@ description: |
   独立した公式ウェブサイトの形が取られたのは2018年からで、その時点からデザイン以外のウェブサイト構成を担当しています。
 
   静的サイト構成に Vue.js を用いることが出来るフレームワーク Gridsome を用いつつ、更新がなるべく楽になるよう構造を考えながら作成しています。
+highlightAssets: 
+  - title: アーキテクチャ図
+    path: works/htf-architecture.png
 earnedExperiences: 
   - Bulma CSS Framework を用いたウェブサイト構成
 functionalities:

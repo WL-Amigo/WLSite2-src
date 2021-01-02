@@ -12,6 +12,7 @@ technologies:
   - Cloud Firestore
   - Cloud Storage for Firebase
   - Cloud Functions for Firebase
+  - SendGrid
   - Golang
   - Echo(Golang)
   - Firebase Admin SDK (Golang)
@@ -26,6 +27,9 @@ description: |
   2018年より前は Google Form とファイル共有サービスを用いた作品データの受け渡しを行っていましたが、バイナリデータのダウンロードが人手、作品情報に誤りがあった時の訂正は問い合わせ対応になるなど、かなりのマンパワーを消費する課題がありました。それを解決するため、2018年度に作品登録用ウェブアプリを制作し、運用を開始しました。
 
   「作品データ受付」というタスクから人手をほぼ全て排除し、登録データのエクスポートも少ない手順でできるようにしたことで、登録データに基づく様々なタスクの作業コストの削減を実現できました。
+highlightAssets: 
+  - title: アーキテクチャ図
+    path: works/htf-architecture.png
 earnedExperiences: 
   - 再編集可能なWebフォームアプリケーション(文字情報・ファイル登録・画像登録)の開発
   - 非エンジニアとスクリプトの双方に親和性のあるスタッフ用内部ツールの開発

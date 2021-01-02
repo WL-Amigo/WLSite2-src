@@ -88,3 +88,6 @@ GitHub Pages:
 Netlify:
   url: https://www.netlify.com/
   type: web-frontend
+SendGrid:
+  url: https://sendgrid.com/
+  type: cloud-service
