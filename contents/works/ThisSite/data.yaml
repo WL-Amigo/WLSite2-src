@@ -1,6 +1,6 @@
 id: this-site
 title: WhiteLuckBringers ポートフォリオサイト
-publishDate: 2020-09
+publishDate: 2021-01
 state: ongoing
 github: https://github.com/WL-Amigo/WLSite2-src
 category: website
@@ -25,6 +25,6 @@ functionalities:
 improvements:
   - 作品についてはソースコードとコンテンツを分離し、コンテンツのみ増やせば自動的に一覧・詳細ページが出来上がる仕組みを構成
 impact: []
-earnedExperiences: 
+earnedExperiences:
   - Vue.js + Tailwind CSS によるポートフォリオサイト構成
   - Gridsome のブートストラップ処理の TypeScript による記述
