@@ -70,6 +70,7 @@ const TechTypeToLabelsMap: TypeToTechDataEntriesMapType = {
   'cloud-service': [],
   backend: [],
   language: [],
+  desktop: [],
   general: [],
 };
 

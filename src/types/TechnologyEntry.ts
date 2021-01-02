@@ -8,4 +8,5 @@ export type TechnologyCategory =
   | 'language'
   | 'cloud-service'
   | 'backend'
+  | 'desktop'
   | 'general';

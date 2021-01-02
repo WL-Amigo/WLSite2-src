@@ -91,3 +91,18 @@ Netlify:
 SendGrid:
   url: https://sendgrid.com/
   type: cloud-service
+Qt 5:
+  url: https://www.qt.io/
+  type: general
+Midifile:
+  url: https://midifile.sapp.org/
+  type: desktop
+Standard MIDI File:
+  url: https://www.midi.org/specifications/file-format-specifications/standard-midi-files
+  type: general
+Timidity++:
+  url: https://ja.osdn.net/projects/twsynth/
+  type: desktop
+AppImage:
+  url: https://appimage.org/
+  type: desktop
