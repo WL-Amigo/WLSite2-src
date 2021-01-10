@@ -1,36 +1,36 @@
 Vue.js 2.x:
-  type: web-frontend 
+  type: web-frontend
   url: https://jp.vuejs.org/index.html
-Gridsome: 
-  type: web-frontend
-  url: https://gridsome.org/
-TypeScript: 
-  url: https://www.typescriptlang.org/
-  type: language
-Bulma CSS Framework: 
-  url: https://bulma.io/
-  type: web-frontend
-Buefy: 
-  url: https://buefy.org/
-  type: web-frontend
-Google Cloud Storage: 
-  url: https://cloud.google.com/storage
-  type: cloud-service
-Google Cloud CDN: 
-  url: https://cloud.google.com/cdn
-  type: cloud-service
-Golang: 
-  url: https://golang.org/
-  type: language
-Echo(Golang): 
-  url: https://echo.labstack.com/
-  type: backend
-Sharp(Node.js): 
-  url: https://sharp.pixelplumbing.com/
-  type: backend
 Vue.js Composition API:
   type: web-frontend
   url: https://composition-api.vuejs.org/
+Gridsome:
+  type: web-frontend
+  url: https://gridsome.org/
+TypeScript:
+  url: https://www.typescriptlang.org/
+  type: language
+Bulma CSS Framework:
+  url: https://bulma.io/
+  type: web-frontend
+Buefy:
+  url: https://buefy.org/
+  type: web-frontend
+Google Cloud Storage:
+  url: https://cloud.google.com/storage
+  type: cloud-service
+Google Cloud CDN:
+  url: https://cloud.google.com/cdn
+  type: cloud-service
+Golang:
+  url: https://golang.org/
+  type: language
+Echo(Golang):
+  url: https://echo.labstack.com/
+  type: backend
+Sharp(Node.js):
+  url: https://sharp.pixelplumbing.com/
+  type: backend
 Tailwind CSS:
   url: https://tailwindcss.com/
   type: web-frontend
@@ -106,3 +106,9 @@ Timidity++:
 AppImage:
   url: https://appimage.org/
   type: desktop
+React(DOM):
+  type: web-frontend
+  url: https://ja.reactjs.org/
+React Hooks:
+  type: web-frontend
+  url: https://ja.reactjs.org/docs/hooks-intro.html
