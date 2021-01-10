@@ -6,3 +6,8 @@ node_modules
 dist
 .env
 .env.*
+bu_*
+bundle-stats.html
+
+package-lock.json
+yarn.lock

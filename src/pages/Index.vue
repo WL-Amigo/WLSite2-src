@@ -1,28 +1,22 @@
-<template lang="pug">
-Layout
-  section.section
-    .container
-      .columns.is-centered
-        .column.is-one-third: img.image(src="@/assets/logo.svg")
-
-      .centering-container
-        .buttons
-          a.button.is-primary(href="/about/circle") WhiteLuckers について
-          a.button.is-primary(href="/about/self") アミーゴについて
-
+<template>
+  <work-list />
 </template>
 
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api';
+import WorkList from '@/components/WorkList.vue';
+import { makeOGPTags } from '@/utils/metainfo/OGP';
 
-<script>
-export default {
+export default defineComponent({
   metaInfo: {
-    title: ''
-  }
-}
+    title: 'Works',
+    meta: makeOGPTags({
+      title: 'Works',
+      description: 'アミーゴの制作物一覧',
+    }),
+  },
+  components: {
+    'work-list': WorkList,
+  },
+});
 </script>
-
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
-</style>

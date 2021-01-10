@@ -1,0 +1,30 @@
+id: this-site
+title: WhiteLuckBringers ポートフォリオサイト
+publishDate: 2021-01
+state: ongoing
+github: https://github.com/WL-Amigo/WLSite2-src
+category: website
+technologies:
+  - Vue.js 2.x
+  - Vue.js Composition API
+  - Gridsome
+  - TypeScript
+  - Tailwind CSS
+  - Netlify
+description: |
+  本サイトです。
+
+  勉強のため、コンポーネントライブラリは導入せず、 Tailwind CSS を活用して制作しています(カルーセル等も自作しています)。大体制作してみて、制作物の指向がアプリではなくウェブサイトならいい感じかもしれない、と感じました。
+
+  今まで2回サイトを作ろうとして挫折してきたため、楽しく(楽に)更新できるよう、コンテンツとそれらをレンダリングするコードを最初から可能な限り分離して制作しています。
+
+  Gridsome が Vue 3.x 系に対応予定のため、対応次第 Vue 3.x 系に移行するつもりです。
+functionalities:
+  - 今まで制作・発表した作品の一覧及び詳細
+  - 得意な技術・触れたことのある技術・経歴等を示したプロフィール
+improvements:
+  - 作品についてはソースコードとコンテンツを分離し、コンテンツのみ増やせば自動的に一覧・詳細ページが出来上がる仕組みを構成
+impact: []
+earnedExperiences:
+  - Vue.js + Tailwind CSS によるポートフォリオサイト構成
+  - Gridsome のブートストラップ処理の TypeScript による記述

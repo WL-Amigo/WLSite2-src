@@ -1,0 +1,12 @@
+- name: Vue.js
+  experience: 趣味でのWebアプリ開発、実務ではインターンでの講師経験
+  abilities:
+    - Typescript + Composition API、及び Firebase 等のバックエンドを組み合わせた Web アプリ開発
+    - Buefy(Bulma), Ant Design Vue, Tailwind CSS と組み合わせたフロントエンド開発
+    - provide/inject を活用したビジネスロジックのコード分離
+- name: Typescript
+  experience: React アプリでの実務経験(半年程度)、趣味でのアプリ・コマンドラインツール開発
+  abilities:
+    - オブジェクト指向言語としての活用(Dependency Injection、デザインパターンの応用など)
+    - String Literal Types, Type Alias, Union Type 等、Typescript の型表現機能の応用
+    - ts-morph を利用したコード自動生成系の作成

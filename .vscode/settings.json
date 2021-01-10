@@ -1,0 +1,9 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "vetur.experimental.templateInterpolationService": true,
+  "yaml.schemas": {
+    "./schemas/work.json": ["/contents/works/**/data.yaml"]
+  }
+}

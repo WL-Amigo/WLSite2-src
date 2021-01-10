@@ -1,0 +1,39 @@
+id: like-like-animation-generator
+title: いいね風エフェクトアニメジェネレータ
+publishDate: 2016-03
+url: http://wl-amigo.github.io/LikeLikeEffectGenerator/
+github: https://github.com/WL-Amigo/LikeLikeEffectGenerator
+category: webapp
+technologies:
+  - Web Worker
+  - jsgif
+  - FileSaver.js
+  - JSZip
+  - jscolor
+  - canvg
+  - TypeScript
+  - GitHub Pages
+description: |
+  某 SNS のいいねボタンを押した時のようなエフェクトを好きな画像に適用し GIF アニメを生成出来る Web アプリです。
+  バックエンドはなく、画像の読み込みからフレームの生成、GIF エンコードまで全てブラウザ上で行っています。
+
+  某 SNS のいいねボタンの仕様変更(以前はお気に入りボタンでした)に伴いエフェクトが可愛くなっていたのを見て、勢いで作りました。
+  
+  また、その後某 SNS が10周年を迎えた時にごく短い期間だけエフェクトの仕様が変化し、そちらも面白かったので勢いでジェネレータの追加を行いました。その際にフレーム生成用のパーティクルシステムを自前で制作しました。
+
+  (スクリーンショット内キャラクター画像はプロ生ちゃんをお借りしています(© 2019 合同会社プロ生))
+functionalities:
+  - 任意の入力画像に某 SNS のいいねボタン風のエフェクトを合成して GIF/フレーム毎PNG で出力
+  - 出力サイズやエフェクトの色などのカスタマイズ
+  - 通常仕様・10周年仕様に対応
+improvements:
+  - GIF エンコード処理は Web Worker で実行できるように切り出しを行い、ブラウザが応答なしになることを防止
+  - GIF 内の各フレームで色が揺れるのを防ぐため、 jsgif のコードをフレーム全体で1つのパレットを生成するように変更 
+impact:
+  - イラストレータや VTuber の方など多くの方から利用されています
+  - 反響の一例として、2020年6月19日(UTCによる)にハッシュタグ「いいね風エフェクトアニメジェネレータ」付きのおよそ 500 件のツイートを観測
+earnedExperiences: 
+  - SVG を応用した GIF アニメの自動生成
+links:
+  - label: Twitter ハッシュタグ「いいね風エフェクトアニメジェネレータ」
+    url: https://twitter.com/search?q=%23%E3%81%84%E3%81%84%E3%81%AD%E9%A2%A8%E3%82%A8%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%82%A2%E3%83%8B%E3%83%A1%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%BF%20&src=typed_query
