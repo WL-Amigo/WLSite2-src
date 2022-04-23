@@ -28,9 +28,7 @@
           <div class="text-gray-500" v-if="career.toYear && career.toMonth">
             {{ career.toYear }}-{{ `0${career.toMonth.toFixed(0)}`.slice(-2) }}
           </div>
-          <div class="text-gray-500" v-else>
-            継続中
-          </div>
+          <div class="text-gray-500" v-else>継続中</div>
           <div class="text-lg">
             {{ career.description }}
           </div>
@@ -63,9 +61,18 @@ const CareerList: CareerEntry[] = [
   {
     type: 'company',
     description:
-      '不動産業者向けシステム開発 フロントエンドエンジニア(C#/WPF, React 等)',
+      '物流部門向けシステム開発 ウェブフロントエンドエンジニア (TypeScript/React)',
+    fromYear: 2021,
+    fromMonth: 7,
+  },
+  {
+    type: 'company',
+    description:
+      '不動産業者向けシステム開発 フロントエンドエンジニア (C#/WPF, React 等)',
+    toYear: 2021,
+    toMonth: 6,
     fromYear: 2018,
-    fromMonth: 4
+    fromMonth: 4,
   },
   {
     type: 'school',
@@ -73,7 +80,7 @@ const CareerList: CareerEntry[] = [
     toYear: 2018,
     toMonth: 3,
     fromYear: 2016,
-    fromMonth: 4
+    fromMonth: 4,
   },
   {
     type: 'school',
@@ -81,7 +88,7 @@ const CareerList: CareerEntry[] = [
     toYear: 2016,
     toMonth: 3,
     fromYear: 2012,
-    fromMonth: 4
+    fromMonth: 4,
   },
   {
     type: 'school',
@@ -89,19 +96,19 @@ const CareerList: CareerEntry[] = [
     toYear: 2011,
     toMonth: 3,
     fromYear: 2008,
-    fromMonth: 4
-  }
+    fromMonth: 4,
+  },
 ];
 
 export default defineComponent({
   setup() {
     return {
-      careerList: CareerList
+      careerList: CareerList,
     };
   },
   components: {
     'academic-cap-icon': AcademicCapIcon,
-    'office-building-icon': OfficeBuildingIcon
-  }
+    'office-building-icon': OfficeBuildingIcon,
+  },
 });
 </script>

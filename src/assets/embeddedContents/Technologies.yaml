@@ -1,3 +1,6 @@
+Vue.js 3.x:
+  type: web-frontend
+  url: https://v3.ja.vuejs.org/
 Vue.js 2.x:
   type: web-frontend
   url: https://jp.vuejs.org/index.html
@@ -31,8 +34,14 @@ Echo(Golang):
 Sharp(Node.js):
   url: https://sharp.pixelplumbing.com/
   type: backend
+WindiCSS:
+  url: https://windicss.org/
+  type: web-frontend
 Tailwind CSS:
   url: https://tailwindcss.com/
+  type: web-frontend
+twin.macro:
+  url: https://github.com/ben-rogerson/twin.macro,
   type: web-frontend
 Ant Design Vue:
   url: https://1x.antdv.com/docs/vue/introduce/
@@ -106,9 +115,15 @@ Timidity++:
 AppImage:
   url: https://appimage.org/
   type: desktop
+SolidJS:
+  url: https://www.solidjs.com/
+  type: web-frontend
 React(DOM):
   type: web-frontend
   url: https://ja.reactjs.org/
 React Hooks:
   type: web-frontend
   url: https://ja.reactjs.org/docs/hooks-intro.html
+zod:
+  type: general
+  url: https://github.com/colinhacks/zod
