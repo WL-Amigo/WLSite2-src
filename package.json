@@ -46,7 +46,7 @@
     "js-yaml": "^3.14.0",
     "klaw": "^3.0.0",
     "license-checker": "^25.0.1",
-    "pnpm": "^6.32.9",
+    "pnpm": "^7.33.4",
     "postcss": "^7",
     "postcss-loader": "^3.0.0",
     "prettier": "^2.1.2",
