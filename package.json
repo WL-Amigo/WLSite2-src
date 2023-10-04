@@ -47,7 +47,7 @@
     "klaw": "^3.0.0",
     "license-checker": "^25.0.1",
     "pnpm": "^6.32.9",
-    "postcss": "^7",
+    "postcss": "^8",
     "postcss-loader": "^3.0.0",
     "prettier": "^2.1.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
