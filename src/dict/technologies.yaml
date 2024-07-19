@@ -1,0 +1,162 @@
+Vue.js 3.x:
+  type: web-frontend
+  url: https://v3.ja.vuejs.org/
+Vue.js 2.x:
+  type: web-frontend
+  url: https://jp.vuejs.org/index.html
+Vue.js Composition API:
+  type: web-frontend
+  url: https://composition-api.vuejs.org/
+Gridsome:
+  type: web-frontend
+  url: https://gridsome.org/
+TypeScript:
+  url: https://www.typescriptlang.org/
+  type: language
+Bulma CSS Framework:
+  url: https://bulma.io/
+  type: web-frontend
+Buefy:
+  url: https://buefy.org/
+  type: web-frontend
+Google Cloud Storage:
+  url: https://cloud.google.com/storage
+  type: cloud-service
+Google Cloud CDN:
+  url: https://cloud.google.com/cdn
+  type: cloud-service
+Golang:
+  url: https://golang.org/
+  type: language
+Echo(Golang):
+  url: https://echo.labstack.com/
+  type: backend
+Sharp(Node.js):
+  url: https://sharp.pixelplumbing.com/
+  type: backend
+WindiCSS:
+  url: https://windicss.org/
+  type: web-frontend
+Tailwind CSS:
+  url: https://tailwindcss.com/
+  type: web-frontend
+twin.macro:
+  url: https://github.com/ben-rogerson/twin.macro,
+  type: web-frontend
+Ant Design Vue:
+  url: https://1x.antdv.com/docs/vue/introduce/
+  type: web-frontend
+Firebase Authentication:
+  url: https://firebase.google.com/products/auth
+  type: cloud-service
+Cloud Firestore:
+  url: https://firebase.google.com/products/firestore
+  type: cloud-service
+Cloud Storage for Firebase:
+  url: https://firebase.google.com/products/storage
+  type: cloud-service
+Firebase Hosting:
+  url: https://firebase.google.com/products/hosting
+  type: cloud-service
+Firebase Admin SDK (Golang):
+  url: https://firebase.google.com/docs/admin/setup
+  type: backend
+Cloud Functions for Firebase:
+  url: https://firebase.google.com/products/functions
+  type: cloud-service
+JSON Schema:
+  url: https://json-schema.org/
+  type: general
+quicktype:
+  url: https://quicktype.io/
+  type: general
+ts-morph:
+  url: https://ts-morph.com/
+  type: general
+Web Worker:
+  url: https://developer.mozilla.org/ja/docs/Web/API/Web_Workers_API
+  type: web-frontend
+jsgif:
+  url: https://github.com/antimatter15/jsgif
+  type: web-frontend
+FileSaver.js:
+  url: https://github.com/eligrey/FileSaver.js/
+  type: web-frontend
+JSZip:
+  url: https://stuk.github.io/jszip/
+  type: general
+jscolor:
+  url: https://jscolor.com/
+  type: web-frontend
+canvg:
+  url: https://github.com/canvg/canvg
+  type: web-frontend
+GitHub Pages:
+  url: https://pages.github.com/
+  type: web-frontend
+Netlify:
+  url: https://www.netlify.com/
+  type: web-frontend
+SendGrid:
+  url: https://sendgrid.com/
+  type: cloud-service
+Qt 5:
+  url: https://www.qt.io/
+  type: general
+Midifile:
+  url: https://midifile.sapp.org/
+  type: desktop
+Standard MIDI File:
+  url: https://www.midi.org/specifications/file-format-specifications/standard-midi-files
+  type: general
+Timidity++:
+  url: https://ja.osdn.net/projects/twsynth/
+  type: desktop
+AppImage:
+  url: https://appimage.org/
+  type: desktop
+SolidJS:
+  url: https://www.solidjs.com/
+  type: web-frontend
+React(DOM):
+  type: web-frontend
+  url: https://ja.reactjs.org/
+React Hooks:
+  type: web-frontend
+  url: https://ja.reactjs.org/docs/hooks-intro.html
+zod:
+  type: general
+  url: https://github.com/colinhacks/zod
+Astro:
+  type: web-frontend
+  url: https://astro.build/
+OpenCV.js:
+  type: general
+  url: https://github.com/opencv/opencv
+Comlink:
+  type: general
+  url: https://github.com/GoogleChromeLabs/comlink
+Vite:
+  type: web-frontend
+  url: https://ja.vitejs.dev/
+Flutter:
+  type: mobile
+  url: https://flutter.dev/
+Riverpod:
+  type: mobile
+  url: https://riverpod.dev/
+Dart:
+  type: language
+  url: https://dart.dev/
+AppWrite:
+  type: cloud-service
+  url: https://appwrite.io/
+zustand:
+  type: web-frontend
+  url: https://github.com/pmndrs/zustand
+AutoRoute:
+  type: mobile
+  url: https://github.com/Milad-Akarie/auto_route_library
+slang:
+  type: mobile
+  url: https://github.com/slang-i18n/slang

@@ -1,0 +1,26 @@
+---
+import TechnologyLinkTip from "../../../components/TechnologyLinkTip.astro";
+import { CogIcon } from "../../../icons";
+
+interface Props {
+  technologies: readonly string[];
+}
+
+const { technologies } = Astro.props;
+---
+
+{
+  technologies.length > 0 && (
+    <div>
+      <h2 class="text-xl font-bold flex flex-row gap-x-1 items-center pb-2">
+        <CogIcon />
+        <span>使用している技術</span>
+      </h2>
+      <div class="flex flex-row gap-2 flex-wrap">
+        {technologies.map((t) => (
+          <TechnologyLinkTip name={t} />
+        ))}
+      </div>
+    </div>
+  )
+}

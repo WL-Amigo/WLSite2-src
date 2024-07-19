@@ -1,0 +1,26 @@
+---
+interface Props {
+  label: string;
+  highlights: readonly string[];
+}
+
+const { label, highlights } = Astro.props;
+---
+
+<Fragment>
+  {
+    highlights.length > 0 && (
+      <div>
+        <h2 class="text-xl font-bold flex flex-row gap-x-1 items-center pb-1">
+          <slot name="icon" />
+          <span>{label}</span>
+        </h2>
+        <ul class="list-disc ml-6 list-outside">
+          {highlights.map((hl) => (
+            <li>{hl}</li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+</Fragment>

@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { LinkExternalIcon, LinkIcon } from "../../../icons";
+import { ExternalLink } from "../../../components/base/ExternalLink";
+import { InternalLink } from "../../../components/base/InternalLink";
+
+interface Props {
+  links: CollectionEntry<"works">["data"]["links"];
+}
+
+const { links } = Astro.props;
+---
+
+{
+  links.length > 0 && (
+    <div>
+      <h2 class="text-xl font-bold flex flex-row gap-x-1 items-center pb-1">
+        <LinkIcon />
+        <span>関連</span>
+      </h2>
+      {links.map((l) =>
+        l.url.startsWith("/") ? (
+          <InternalLink href={l.url} class="block">
+            {l.label}
+          </InternalLink>
+        ) : (
+          <ExternalLink href={l.url} class="block">
+            <LinkExternalIcon class="w-6 h-6 inline mr-1" />
+            <span>{l.label}</span>
+          </ExternalLink>
+        )
+      )}
+    </div>
+  )
+}

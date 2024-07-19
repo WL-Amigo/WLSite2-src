@@ -1,0 +1,42 @@
+---
+import { differenceInYears, format, parseISO } from "date-fns";
+import ProfileIconImg from "../assets/profile-icon.png";
+import { MailIcon, AtMarkIcon, CakeIcon } from "../../../icons";
+import { GitHubIcon } from "../../../icons";
+import { ExternalLink } from "../../../components/base/ExternalLink";
+import { TwitterIcon } from "../../../icons";
+
+const BirthDay = parseISO("1992-06-26T00:00:00+09:00");
+const Age = differenceInYears(new Date(), BirthDay);
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-3">
+  <img
+    class="my-8 mx-auto"
+    src={ProfileIconImg.src}
+    alt="プロフィールアイコン"
+    width={ProfileIconImg.width}
+    height={ProfileIconImg.height}
+  />
+  <div class="flex flex-col justify-center text-xl col-span-2 gap-y-2">
+    <h1 class="font-bold text-2xl">アミーゴ</h1>
+    <div>
+      <CakeIcon class="inline mx-2 w-6 h-6" />
+      <span>{format(BirthDay, "yyyy/MM/dd")} ({Age}才)</span>
+    </div>
+    <div>
+      <MailIcon class="inline mx-2 w-6 h-6" />
+      <span>white.luckers</span>
+      <AtMarkIcon class="inline w-6 h-6" />
+      <span>gmail.com</span>
+    </div>
+    <div>
+      <GitHubIcon class="inline mx-2 w-6 h-6" />
+      <ExternalLink href="https://github.com/WL-Amigo">WL-Amigo</ExternalLink>
+    </div>
+    <div>
+      <TwitterIcon class="inline mx-2 w-6 h-6" />
+      <ExternalLink href="https://twitter.com/WL_Amigo">WL_Amigo</ExternalLink>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+---
+import { format } from "date-fns";
+import { isNotNullOrUndefined } from "../../../utils/emptiness";
+
+interface Props {
+  from: Date;
+  to: Date | undefined;
+  title: string;
+  works?: readonly {
+    title: string;
+    topics?: readonly string[];
+  }[];
+}
+
+const { from, to, title, works = [] } = Astro.props;
+---
+
+<div class="flex flex-col lg:flex-row items-stretch">
+  <div class="px-6 py-4 flex items-center justify-center">
+    <div class="relative h-12 w-12">
+      <div
+        class="absolute inset-0 rounded-full border-2 border-gray-400 bg-white w-full h-full"
+      >
+      </div>
+      <div
+        class="absolute inset-0 w-full h-full flex justify-center items-center"
+      >
+        <slot name="icon" />
+      </div>
+    </div>
+  </div>
+  <div class="flex-1">
+    <div class="text-gray-500">
+      {isNotNullOrUndefined(to) ? format(to, "yyyy-MM") : "継続中"}
+    </div>
+    <div class="text-lg">{title}</div>
+    {
+      works.length > 0 && (
+        <ul class="list-disc list-outside ml-6">
+          {works.map((w) => (
+            <li>
+              <div class="flex flex-col">
+                <span>{w.title}</span>
+                {w.topics?.map((t) => (
+                  <span class="text-gray-600 text-sm">― {t}</span>
+                ))}
+              </div>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+    <div class="text-gray-500">{format(from, "yyyy-MM")}</div>
+  </div>
+</div>

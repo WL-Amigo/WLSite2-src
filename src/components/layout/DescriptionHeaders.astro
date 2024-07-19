@@ -1,0 +1,31 @@
+---
+import type { ImageMetadata } from "astro";
+import DefaultImage from "../../assets/default-ogimage.jpg";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: ImageMetadata;
+}
+
+const {
+  description = "色々制作サークル WhiteLuckBringers ポートフォリオサイト",
+  title,
+  image = DefaultImage,
+} = Astro.props;
+
+const imageUrl = new URL(image.src, Astro.site);
+---
+
+<meta name="description" content={description} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:site" content="@WL_Amigo" />
+<meta name="twitter:creator" content="@WL_Amigo" />
+<meta name="twitter:image" content={imageUrl} />
+<meta name="og:type" content="website" />
+<meta name="og:title" content={title} />
+<meta name="og:description" content={description} />
+<meta name="og:url" content={Astro.site} />
+<meta name="og:image" content={imageUrl} />

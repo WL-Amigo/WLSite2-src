@@ -1,0 +1,55 @@
+id: hakudenkai-circle-control-panel
+title: 博麗電脳試遊会 サークル参加者向けコントロールパネル
+banner: ./banner.jpg
+screenshots: [./ss1.jpg, ./ss2.jpg, ./ss3.jpg, ./ss4.jpg]
+publishDate: 2018-10
+state: ongoing
+category: webapp
+technologies:
+  - Vue.js 2.x
+  - TypeScript
+  - Bulma CSS Framework
+  - Buefy
+  - Firebase Authentication
+  - Cloud Firestore
+  - Cloud Storage for Firebase
+  - Cloud Functions for Firebase
+  - SendGrid
+  - Golang
+  - Echo(Golang)
+  - Firebase Admin SDK (Golang)
+  - JSON Schema
+  - quicktype
+  - ts-morph
+  - Netlify
+description: |
+  東方Project 2次創作ゲームをその場で遊べるイベント「博麗電脳試遊会」のサークル参加者向けコントロールパネルです。
+  サークル参加者がサークル情報・ゲーム情報を登録、ゲームデータ・バナー・スクリーンショットのアップロードを行うことが出来ます。また、データ提出締切前であればいつでも情報を変更可能になっています。
+
+  2018年より前は Google Form とファイル共有サービスを用いた作品データの受け渡しを行っていましたが、バイナリデータのダウンロードが人手、作品情報に誤りがあった時の訂正は問い合わせ対応になるなど、かなりのマンパワーを消費する課題がありました。それを解決するため、2018年度に作品登録用ウェブアプリを制作し、運用を開始しました。
+
+  「作品データ受付」というタスクから人手をほぼ全て排除し、登録データのエクスポートも少ない手順でできるようにしたことで、登録データに基づく様々なタスクの作業コストの削減を実現できました。
+highlightAssets:
+  - title: アーキテクチャ図
+    path: ../_sharedAssets/htf-architecture.png
+earnedExperiences:
+  - 再編集可能なWebフォームアプリケーション(文字情報・ファイル登録・画像登録)の開発
+  - 非エンジニアとスクリプトの双方に親和性のあるスタッフ用内部ツールの開発
+functionalities:
+  - サークル参加登録(アカウント管理)
+  - 各種ゲーム情報(タイトル、ジャンル、説明文、操作説明など)の編集(途中保存可能)
+  - ゲームデータ・スクリーンショット・バナー画像のアップロード
+  - 現在の各種データ入力状況の確認(スタッフ向け機能)
+  - 入力された情報から会場で使用するためのデータをエクスポート(スタッフ向け機能)
+improvements:
+  - JSON Schema, QuickType, ts-morph を用い、プロジェクト間・言語間で一貫して利用可能な型定義を生成
+impact: []
+links:
+  - label: 博麗電脳試遊会 公式サイト
+    url: https://hakudenkai.netlify.app/
+  - label: 博麗電脳試遊会 公式サイト 作品紹介
+    url: /work/hakudenkai-mainsite
+  - label: 博麗電脳試遊会 EXTRA 会場サイト
+    url: https://hakudenkai-extra.netlify.app/
+  - label: 博麗電脳試遊会 EXTRA 作品紹介
+    url: /work/hakudenkai-extra

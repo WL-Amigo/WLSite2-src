@@ -1,0 +1,61 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { format } from "date-fns";
+import { isNotNullOrEmptyString } from "../../../utils/emptiness";
+import {
+  ExternalLinkButton,
+  ExternalLink,
+} from "../../../components/base/ExternalLink";
+import { LinkExternalIcon, GitHubIcon } from "../../../icons";
+
+type WorkData = CollectionEntry<"works">["data"];
+
+interface Props {
+  title: string;
+  publishDate: Date;
+  state: WorkData["state"];
+  category: WorkData["category"];
+  workUrl: string | undefined;
+  githubUrl: string | undefined;
+}
+const { title, publishDate, state, category, workUrl, githubUrl } = Astro.props;
+const linkButtonText = (() => {
+  switch (category) {
+    case "webapp":
+      return "アプリへ";
+    case "website":
+      return "サイトへ";
+    case "desktopapp":
+      return "特設サイトへ";
+  }
+})();
+---
+
+<div class="flex flex-col gap-y-1">
+  <h1 class="text-3xl font-bold">{title}</h1>
+  <div class="flex flex-row gap-x-1">
+    <span>初出: {format(publishDate, "yyyy-mm")}</span>
+    {state === "ongoing" && <span class="text-primary-700"> ― 継続中</span>}
+  </div>
+  <div class="flex flex-row items-center space-x-4">
+    {
+      isNotNullOrEmptyString(workUrl) && (
+        <ExternalLinkButton href={workUrl} class="gap-x-1">
+          <LinkExternalIcon />
+          <span>{linkButtonText}</span>
+        </ExternalLinkButton>
+      )
+    }
+    {
+      isNotNullOrEmptyString(githubUrl) && (
+        <ExternalLink
+          href={githubUrl}
+          class="flex flex-row items-center gap-x-1"
+        >
+          <GitHubIcon class="w-7 h-7" />
+          <span>GitHub</span>
+        </ExternalLink>
+      )
+    }
+  </div>
+</div>

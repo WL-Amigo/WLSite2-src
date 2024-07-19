@@ -1,0 +1,17 @@
+---
+import TechnologyLinkTip from "../../../components/TechnologyLinkTip.astro";
+
+interface Props {
+  categoryText: string;
+  technologyNameList: readonly string[];
+}
+
+const { categoryText, technologyNameList } = Astro.props;
+---
+
+<div class="pb-3">
+  <h3 class="pb-1">{categoryText}</h3>
+  <div class="flex flex-row flex-wrap gap-2">
+    {technologyNameList.map((tn) => <TechnologyLinkTip name={tn} />)}
+  </div>
+</div>

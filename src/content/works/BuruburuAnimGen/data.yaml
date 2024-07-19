@@ -1,0 +1,36 @@
+id: buruburu-animgen
+title: ブルブルアニメジェネレーター
+banner: ./banner.png
+screenshots: [./ss1.png, ./ss2.png, ./ss3.png]
+publishDate: 2023-04
+url: https://buruburu-animgen.netlify.app/
+githubUrl: https://github.com/WL-Amigo/buruburu-animation-generator
+category: webapp
+technologies:
+  - SolidJS
+  - TypeScript
+  - WindiCSS
+  - OpenCV.js
+  - Web Worker
+  - Comlink
+  - Netlify
+  - Vite
+description: |
+  任意の画像の輪郭をブルブルさせたアニメーションを生成するブラウザ向けアプリです。
+
+  こちらは元々、ある機会で知り合った方が Python + OpenCV を用いて実装していたものです。
+  こちらが自分のツボに刺さりまくりだったため、アルゴリズムを使わせていただく許可をいただいた上で、OpenCV.js を用いてブラウザ上で動くように移植しました。
+
+  (スクリーンショット内キャラクター画像はプロ生ちゃんをお借りしています(© 2017 合同会社プロ生))
+earnedExperiences:
+  - WebWorker 及び Comlink を用いた画像処理の別スレッド化、及び出力結果画像のスレッド間データ交換
+  - OpenCV.js を用いた簡単な画像解析・画像処理
+functionalities:
+  - 各種設定に応じて、任意の入力画像の輪郭をブルブルさせたアニメーションを生成
+  - インタラクティブな輪郭検出の調整
+  - gif/連番PNG (zip) へのエクスポート
+improvements: []
+impact: []
+links:
+  - label: Tegaki Animation Generator (移植元アプリ)
+    url: https://github.com/wwwshwww/tegaki_animation_generator

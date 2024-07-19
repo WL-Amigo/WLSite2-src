@@ -1,0 +1,54 @@
+---
+import { z } from "astro/zod";
+import PersonalHistoriesRaw from "./PersonalHistory.yaml";
+import PersonalHistoryRow from "./PersonalHistoryRow.astro";
+import {
+  BuildingsIcon,
+  GraduationCapIcon,
+  ChevronUpIcon,
+} from "../../../icons";
+
+const PersonalHistoriesSchema = z
+  .object({
+    type: z.enum(["company", "school"]),
+    title: z.string(),
+    works: z
+      .object({
+        title: z.string(),
+        topics: z.string().array().optional(),
+      })
+      .array()
+      .optional(),
+    from: z.date(),
+    to: z.date().optional(),
+  })
+  .array();
+const PersonalHistories = PersonalHistoriesSchema.parse(PersonalHistoriesRaw);
+---
+
+<div class="pt-8">
+  <h1 class="text-center text-3xl">経歴</h1>
+  <div class="flex flex-col items-stretch">
+    {
+      PersonalHistories.flatMap((ph) => [
+        <PersonalHistoryRow
+          title={ph.title}
+          works={ph.works}
+          from={ph.from}
+          to={ph.to}
+        >
+          {ph.type === "company" ? (
+            <BuildingsIcon slot="icon" />
+          ) : ph.type === "school" ? (
+            <GraduationCapIcon slot="icon" />
+          ) : null}
+        </PersonalHistoryRow>,
+        <div class="h-4 relative">
+          <div class="absolute left-0 top-0 bottom-0 w-full lg:w-24 flex flex-row justify-center items-center">
+            <ChevronUpIcon class="text-gray-400 w-6 h-6" />
+          </div>
+        </div>,
+      ]).slice(0, PersonalHistories.length * 2 - 1)
+    }
+  </div>
+</div>

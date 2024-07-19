@@ -1,0 +1,48 @@
+id: hakudenkai-extra
+title: 博麗電脳試遊会 EXTRA 会場サイト
+banner: ./banner.jpg
+screenshots: [./ss1.jpg, ./ss2.jpg, ./ss3.jpg]
+publishDate: 2018-10
+state: ongoing
+url: https://hakudenkai-extra.netlify.app/
+category: website
+technologies:
+  - Vue.js 2.x
+  - Gridsome
+  - TypeScript
+  - Bulma CSS Framework
+  - Buefy
+  - Google Cloud Storage
+  - Google Cloud CDN
+  - Golang
+  - Echo(Golang)
+  - Sharp(Node.js)
+  - Netlify
+description: |
+  博麗電脳試遊会 EXTRA は、同人ゲーム「東方Project」の二次創作ゲームのオンライン展示イベントです。
+  2018年の初開催から、デザイン以外のサイト構築全てを担当しています。
+
+  本サイト用のコントロールパネルも開発しており、作品登録からウェブサイトへの掲載までを全て行うことが出来るプラットフォームとなっています。
+highlightAssets:
+  - title: アーキテクチャ図
+    path: ../_sharedAssets/htf-architecture.png
+functionalities:
+  - キャラクターの初登場原作・ゲームの制作状況・ゲームジャンルによる作品絞り込み
+  - ゲームのダウンロード(予めサークル側でアップロードして頂いたものを CDN 経由で配信)
+  - ゲーム詳細ページのシェア、同サークルの他作品へのリンク、販売サイトへのリンクなどを備える作品詳細ページ
+improvements:
+  - ゲームデータ配信を Google Cloud Storage から行うようにし、ダウンロード負荷によるサイトダウンを抑制(2019年度)
+  - サイトのビルド前に登録画像の最適化をスクリプトで行えるようにし、サイト読み込み時間を改善(2020年度)
+impact:
+  - 来場者数 およそ 5000 人(2020年度実績)
+  - 作品詳細ページの総PV数 30000 超(2020年度実績)
+  - 作品ダウンロード回数合計 10000 回超(2020年度実績)
+earnedExperiences:
+  - Gridsome を用いたコンテンツ展示サイトの構成
+  - Google Cloud Storage/CDN を用いた静的コンテンツ配信
+  - Sharp を用いたサイズ・画質にバラツキのある画像の配信向け最適化
+links:
+  - label: 博麗電脳試遊会 サークル参加者向けコントロールパネル 作品紹介
+    url: /work/hakudenkai-circle-control-panel
+  - label: 博麗電脳試遊会 公式サイト 作品紹介
+    url: /work/hakudenkai-mainsite

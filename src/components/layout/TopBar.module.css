@@ -1,0 +1,8 @@
+.mobile-menu-container {
+  transition: clip-path 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.mobile-menu-container.close {
+  clip-path: polygon(60% 0%, 60% 0%, 40% 100%, 40% 100%);
+}
