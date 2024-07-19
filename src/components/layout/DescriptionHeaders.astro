@@ -1,6 +1,7 @@
 ---
 import type { ImageMetadata } from "astro";
 import DefaultImage from "../../assets/default-ogimage.jpg";
+import { getImage } from "astro:assets";
 
 interface Props {
   title: string;
@@ -14,7 +15,8 @@ const {
   image = DefaultImage,
 } = Astro.props;
 
-const imageUrl = new URL(image.src, Astro.site);
+const actualImage = await getImage({ src: image });
+const imageUrl = new URL(actualImage.src, Astro.site);
 ---
 
 <meta name="description" content={description} />
