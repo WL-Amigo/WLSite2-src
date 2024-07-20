@@ -1,0 +1,27 @@
+id: this-site-v2
+title: WhiteLuckBringers ポートフォリオサイト V2
+banner: ./banner.jpg
+screenshots: [./ss1.png, ./ss2.png, ./ss3.png]
+publishDate: 2024-07
+state: ongoing
+githubUrl: https://github.com/WL-Amigo/WLSite2-src
+category: website
+technologies:
+  - SolidJS
+  - Astro
+  - TypeScript
+  - zod
+  - Tailwind CSS
+  - Netlify
+description: |
+  本サイトです。
+
+  前回制作時から 3 年経ち、その間に本サイトのようなコンテンツ中心のサイトを構築する手段が大きく変遷していたこともあり、再実装することにしました。
+functionalities:
+  - 今まで制作・発表した作品の一覧及び詳細
+  - 触れたことのある技術・経歴等を示したプロフィール
+earnedExperiences:
+  - Astro + Solid.js + Tailwind CSS によるポートフォリオサイト構成
+improvements: []
+impact: []
+links: []

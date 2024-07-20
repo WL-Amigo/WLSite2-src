@@ -1,0 +1,45 @@
+---
+import "../base.css";
+import { LayoutFooter } from "../components/layout/Footer";
+import { MenuButtonForMobile, TopBar } from "../components/layout/TopBar";
+import LogoImg from "../assets/Logo.svg";
+import type { ImageMetadata } from "astro";
+import DescriptionHeaders from "../components/layout/DescriptionHeaders.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: ImageMetadata;
+}
+
+const { title, description, ogImage } = Astro.props;
+const fullTitle = `${title} - WhiteLuckBringers ポートフォリオサイト`;
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href={LogoImg.src} />
+    <meta name="generator" content={Astro.generator} />
+    <DescriptionHeaders
+      title={fullTitle}
+      description={description}
+      image={ogImage}
+    />
+    <title>{fullTitle}</title>
+  </head>
+  <body>
+    <div class="w-full h-full flex flex-col items-stretch">
+      <TopBar path={Astro.url.pathname}>
+        <MenuButtonForMobile slot="mobileButton" client:load />
+      </TopBar>
+      <div class="flex-1 overflow-y-auto">
+        <slot />
+        <LayoutFooter />
+      </div>
+    </div>
+    <div id="modal" class="absolute"></div>
+  </body>
+</html>

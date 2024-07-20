@@ -1,0 +1,43 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import { format } from "date-fns";
+interface Props {
+  title: string;
+  publishDate: Date;
+  category: string;
+  href: string;
+  bannerImg: ImageMetadata;
+}
+
+const { title, publishDate, category, href, bannerImg } = Astro.props;
+const categoryLocalized = (() => {
+  switch (category) {
+    case "webapp":
+      return "ウェブアプリ";
+    case "website":
+      return "ウェブサイト";
+    case "desktopapp":
+      return "デスクトップアプリ";
+  }
+})();
+---
+
+<a
+  href={href}
+  class="w-full rounded border-x border-b-4 border-gray-500 hover:shadow-md transform hover:-translate-y-1 transition duration-200 overflow-hidden"
+>
+  <Image
+    src={bannerImg}
+    alt={`${title} バナー`}
+    class="aspect-[2/1] object-cover"
+    loading="lazy"
+  />
+  <div class="bg-primary-700 text-white font-bold px-2">
+    {categoryLocalized}
+  </div>
+  <div class="p-2">
+    <h1 class="font-bold text-xl">{title}</h1>
+    <div class="text-sm">初出: {format(publishDate, "yyyy-mm")}</div>
+  </div>
+</a>

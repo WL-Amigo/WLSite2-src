@@ -1,7 +1,5 @@
 [build]
   publish = "dist/"
-  command = "npm run build"
-
+  command = "pnpm build"
 [build.environment]
-  NPM_FLAGS="--prefix=/dev/null"
-  NODE_VERSION="lts/fermium"
+  TZ = "Asia/Tokyo"

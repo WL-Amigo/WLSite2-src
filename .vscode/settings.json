@@ -1,9 +1,10 @@
 {
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll": "explicit"
   },
-  "vetur.experimental.templateInterpolationService": true,
-  "yaml.schemas": {
-    "./schemas/work.json": ["/contents/works/**/data.yaml"]
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
   }
 }

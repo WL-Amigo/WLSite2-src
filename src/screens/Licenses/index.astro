@@ -1,0 +1,20 @@
+---
+import { loadLicenses } from "./LicensesLoader";
+import { BoxIcon } from "../../icons";
+import { ExternalLink } from "../../components/base/ExternalLink";
+
+const Licenses = await loadLicenses();
+---
+
+<h1 class="text-3xl pb-4">依存パッケージのライセンス一覧</h1>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+  {
+    Licenses.map((l) => (
+      <div class="flex flex-row items-center gap-x-1">
+        <BoxIcon />
+        <ExternalLink href={l.link}>{l.name}</ExternalLink>
+        <span>({l.licenseType})</span>
+      </div>
+    ))
+  }
+</div>

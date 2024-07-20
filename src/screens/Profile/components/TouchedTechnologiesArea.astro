@@ -1,0 +1,60 @@
+---
+import {
+  AllTechnologies,
+  type TechnologyCategoryType,
+  type TechnologyDefinitionWithName,
+} from "../../../models/Technology";
+import { isNotNullOrUndefined } from "../../../utils/emptiness";
+import TouchedTechnologiesForCategory from "./TouchedTechnologiesForCategory.astro";
+
+const CategoryToTechnologyMap = new Map<
+  TechnologyCategoryType,
+  TechnologyDefinitionWithName[]
+>();
+for (const t of AllTechnologies) {
+  const existingArray = CategoryToTechnologyMap.get(t.type);
+  if (isNotNullOrUndefined(existingArray)) {
+    existingArray.push(t);
+  } else {
+    CategoryToTechnologyMap.set(t.type, [t]);
+  }
+}
+
+const Categories: readonly TechnologyCategoryType[] = [
+  "web-frontend",
+  "backend",
+  "mobile",
+  "cloud-service",
+  "language",
+  "general",
+];
+const CategoryToTextMap: Record<TechnologyCategoryType, string> = {
+  "web-frontend": "ウェブフロントエンド系",
+  backend: "バックエンド系",
+  "cloud-service": "クラウドサービス",
+  language: "言語",
+  general: "汎用性のある技術",
+  desktop: "デスクトップアプリ系",
+  mobile: "モバイルアプリ系",
+};
+---
+
+<div class="pt-4">
+  <h2 class="text-3xl text-center pb-1">触ったことのある技術一覧</h2>
+  {
+    Categories.map((cat) => {
+      const technologyNameList = (CategoryToTechnologyMap.get(cat) ?? []).map(
+        (t) => t.name
+      );
+      if (technologyNameList.length === 0) {
+        return null;
+      }
+      return (
+        <TouchedTechnologiesForCategory
+          categoryText={CategoryToTextMap[cat]}
+          technologyNameList={technologyNameList}
+        />
+      );
+    })
+  }
+</div>

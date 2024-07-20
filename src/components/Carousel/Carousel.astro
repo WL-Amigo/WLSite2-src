@@ -1,0 +1,15 @@
+---
+import type { ImageMetadata } from "astro";
+import { getImage } from "astro:assets";
+import { ClientCarousel } from "./ClientCarousel";
+
+interface Props {
+  images: readonly ImageMetadata[];
+}
+
+const optimizedImages = await Promise.all(
+  Astro.props.images.map((im) => getImage({ src: im }))
+);
+---
+
+<ClientCarousel client:load images={optimizedImages} />

@@ -1,0 +1,29 @@
+---
+import { z } from "astro/zod";
+import FeaturedSkillsRaw from "./FeaturedSkills.yaml";
+import FeaturedSkill from "./FeaturedSkill.astro";
+
+const FeaturedSkillsSchema = z
+  .object({
+    title: z.string(),
+    experience: z.string(),
+    abilities: z.string().array(),
+  })
+  .array();
+const FeaturedSkills = FeaturedSkillsSchema.parse(FeaturedSkillsRaw);
+---
+
+<div class="space-y-2 pt-8 lg:pt-0">
+  <h1 class="text-center text-3xl">技術</h1>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
+    {
+      FeaturedSkills.map((fs) => (
+        <FeaturedSkill
+          title={fs.title}
+          experience={fs.experience}
+          abilities={fs.abilities}
+        />
+      ))
+    }
+  </div>
+</div>

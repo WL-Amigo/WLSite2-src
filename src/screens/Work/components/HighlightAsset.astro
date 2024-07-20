@@ -1,0 +1,26 @@
+---
+import type { ImageMetadata } from "astro";
+import { HighlightAssetSolid } from "./HighlightAssetSolid";
+import { Image } from "astro:assets";
+
+interface Props {
+  image: ImageMetadata;
+  title: string;
+}
+
+const { image, title } = Astro.props;
+---
+
+<HighlightAssetSolid client:load title={title}>
+  <Image
+    class="w-full h-full object-cover object-center"
+    src={image}
+    alt={title}
+    slot="coverImage"
+  />
+  <Image
+    class="w-full h-full object-contain object-center"
+    src={image}
+    alt={title}
+  />
+</HighlightAssetSolid>

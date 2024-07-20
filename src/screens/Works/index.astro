@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import Card from "./Card.astro";
+import { isAfter } from "date-fns";
+
+const allWorks = (await getCollection("works")).sort((a, b) =>
+  isAfter(a.data.publishDate, b.data.publishDate) ? -1 : 1
+);
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 py-1">
+  {
+    allWorks.map((work) => (
+      <Card
+        title={work.data.title}
+        href={`/work/${work.data.id}`}
+        publishDate={work.data.publishDate}
+        category={work.data.category}
+        bannerImg={work.data.banner}
+      />
+    ))
+  }
+</div>

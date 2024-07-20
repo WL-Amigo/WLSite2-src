@@ -1,0 +1,34 @@
+id: loop-mid-to-loop-ogg
+title: LoopMID2LoopOGG
+banner: ./banner.jpg
+screenshots: [./ss1.jpg, ./ss2.jpg]
+publishDate: 2017-01
+url: https://wl-amigo.github.io/LoopMID2LoopOGG/
+githubUrl: https://github.com/WL-Amigo/LoopMID2LoopOGG
+category: desktopapp
+technologies:
+  - Qt 5
+  - Midifile
+  - Standard MIDI File
+  - Timidity++
+  - AppImage
+description: |
+  RPGツクール2000 規格で作成されたループ再生可能な MIDI ファイルを、ループ再生可能な OGG Vorbis ファイルへ変換するツールです。
+
+  このツールが提供する変換機能は手動でもできないことはないのですが、すでにある多くの大変素晴らしい MIDI 素材を、なるべく透過的に現代的な環境で使用できるようにすることに意味がある、と考え制作しました。
+
+  自分の学生時代を彩ってくれた数々のフリーゲームに使用されてきた素材曲をサントラのように聴きたかった、という動機もありました。
+functionalities:
+  - RPGツクール2000 規格で作成されたループ再生可能な MIDI ファイルを、シームレスにループ再生可能な音声ファイルへ変換
+  - ループ再生可能でない環境向けに予め指定回数ループさせた音声ファイルを出力可能
+  - 各種コンフィグ(変換形式(OGG Vorbis/AAC/WAV)、品質、音量、エフェクトの ON/OFF)
+  - マルチプロセスによる複数ファイルの変換
+improvements: []
+impact:
+  - すべてのバージョンの総ダウンロード数 2400 回超 (2021年1月時点)
+  - 単一バージョンの最高ダウンロード数 900 回超 (v1.3.2)
+earnedExperiences:
+  - Qt 5 を用いたクロスプラットフォーム GUI アプリ開発 (開発は Ubuntu, 配布は Windows/Linux 向け)
+  - Docker を用いた AppImage パッケージング
+  - Standard MIDI File の分割加工・解析
+links: []

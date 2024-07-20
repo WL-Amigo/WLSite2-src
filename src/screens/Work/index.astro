@@ -1,0 +1,60 @@
+---
+import type { CollectionEntry } from "astro:content";
+import {
+  FunctionAddIcon,
+  MegaphoneIcon,
+  PuzzleIcon,
+  SparklingIcon,
+} from "../../icons";
+import Header from "./components/Header.astro";
+import Description from "./components/Description.astro";
+import HighlightList from "./components/HighlightList.astro";
+import Technologies from "./components/Technologies.astro";
+import Links from "./components/Links.astro";
+import Carousel from "../../components/Carousel/Carousel.astro";
+import HighlightAsset from "./components/HighlightAsset.astro";
+
+interface Props {
+  work: CollectionEntry<"works">["data"];
+}
+
+const { work } = Astro.props;
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+  <div>
+    <Carousel images={work.screenshots} />
+    <div class="flex flex-col gap-y-1 py-3 items-stretch">
+      {
+        work.highlightAssets?.map((ha) => (
+          <HighlightAsset image={ha.path} title={ha.title} />
+        ))
+      }
+    </div>
+  </div>
+  <div class="py-2 flex flex-col gap-y-6 items-stretch">
+    <Header
+      title={work.title}
+      publishDate={work.publishDate}
+      category={work.category}
+      state={work.state}
+      workUrl={work.url}
+      githubUrl={work.githubUrl}
+    />
+    <Description description={work.description} />
+    <HighlightList label="機能" highlights={work.functionalities}>
+      <PuzzleIcon slot="icon" />
+    </HighlightList>
+    <HighlightList label="工夫・改善点" highlights={work.improvements}>
+      <FunctionAddIcon slot="icon" />
+    </HighlightList>
+    <HighlightList label="反響" highlights={work.impact}>
+      <MegaphoneIcon slot="icon" />
+    </HighlightList>
+    <HighlightList label="得られた経験" highlights={work.earnedExperiences}>
+      <SparklingIcon slot="icon" />
+    </HighlightList>
+    <Technologies technologies={work.technologies} />
+    <Links links={work.links} />
+  </div>
+</div>
